@@ -1,0 +1,84 @@
+.container {
+    margin-left: 35%;
+    margin-top: 0;
+}
+
+.form {
+    margin-top: 0;
+    width: 500px;
+    height: 600px;
+    background-Color: rgb(1, 0, 50);
+    justify-items: center;
+    justify-content: center;
+}
+
+.loginTitle {
+    font-size: 45px;
+    height: 20px;
+    color: white;
+}
+
+.line {
+    width: 100%;
+    border: 1px solid white;
+}
+
+.login_inputID {
+    width: 90%;
+    height: 10%;
+    margin-top: 5%;
+    margin-left: 4%;
+}
+
+.login_inputPW {
+    width: 90%;
+    height: 10%;
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+.btn_login {
+    width: 45%;
+    margin-left: 27%;
+    margin-top: 5%;
+    height: 10%;
+    background-color: white;
+    font-size: 25px;
+    color: rgb(1, 0, 50);
+}
+
+.btn_login_naver {
+    width: 40%;
+    height: 10%;
+    background-color: lime;
+    margin-left: 5%;
+    font-size: 20px;
+    color: rgb(1, 0, 50);
+}
+
+.btn_login_google {
+    width: 40%;
+    height: 10%;
+    background-color: red;
+    margin-left: 10%;
+    font-size: 20px;
+    color: rgb(1, 0, 50);
+}
+
+.btn_findID {
+    margin-top: 10%;
+    margin-left: 25%;
+    border: 0px;
+    font-size: 20px;
+    background-color: rgb(1, 0, 50);
+    color: white;
+}
+
+.btn_reg {
+    margin-top: 10%;
+    margin-left: 23%;
+    border: 0px;
+    font-size: 20px;
+    background-color: rgb(1, 0, 50);
+    color: white;
+}

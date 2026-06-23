@@ -1,0 +1,74 @@
+.container {
+    margin-left: 25%;
+    margin-top: 0;
+}
+
+.form {
+    margin-top: 0;
+    width: 800px;
+    height: 600px;
+    background-Color: rgb(1, 0, 50);
+    justify-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 100%;
+    border: 1px solid white;
+}
+
+.inputName {
+    width: 80%;
+    height: 8%;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.textColor {
+    color: white;
+    margin-left: 2%;
+}
+
+.inputNick {
+    width: 80%;
+    height: 8%;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.inputID {
+    width: 80%;
+    height: 8%;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.inputPW {
+    width: 80%;
+    height: 8%;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.check_reg {
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+.btn_goLog {
+    margin-top: 3%;
+    margin-left: 30%;
+    width: 20%;
+    height: 10%;
+    background-color: white;
+    color: rgb(1, 0, 50);
+}
+
+.btn_regCom {
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 10%;
+    height: 10%;
+    background-color: white;
+    color: rgb(1, 0, 50);
+}
