@@ -1,26 +1,46 @@
-.container {
-    margin-left: 35%;
-    margin-top: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.form {
-    margin-top: 0;
-    width: 500px;
-    height: 600px;
-    background-Color: rgb(1, 0, 50);
-    justify-items: center;
+.login_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
     justify-content: center;
 }
 
-.loginTitle {
+.login_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login_box {
+    width: 50%;
+    height: 90%;
+    background-Color: black;
+    justify-items: center;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 20px;
+}
+
+.login_title {
     font-size: 45px;
     height: 20px;
     color: white;
 }
 
-.line {
+.login_line {
     width: 100%;
     border: 1px solid white;
+    margin-top: 10%;
 }
 
 .login_inputID {
@@ -37,48 +57,59 @@
     margin-left: 4%;
 }
 
-.btn_login {
+.login_btn {
     width: 45%;
     margin-left: 27%;
-    margin-top: 5%;
+    margin-top: 6%;
     height: 10%;
     background-color: white;
     font-size: 25px;
-    color: rgb(1, 0, 50);
+    color: black;
+    border-radius: 20px;
 }
 
-.btn_login_naver {
+.login_btn_naver {
     width: 40%;
     height: 10%;
-    background-color: lime;
+    background-color: white;
+    margin-top: 4%;
     margin-left: 5%;
     font-size: 20px;
-    color: rgb(1, 0, 50);
+    color: black;
+    padding-right: 3%;
+    border-radius: 20px;
 }
 
-.btn_login_google {
+.login_btn_google {
     width: 40%;
     height: 10%;
-    background-color: red;
+    background-color: white;
     margin-left: 10%;
     font-size: 20px;
-    color: rgb(1, 0, 50);
+    color: black;
+    border-radius: 20px;
 }
 
-.btn_findID {
+.login_btn_findID {
     margin-top: 10%;
     margin-left: 25%;
     border: 0px;
     font-size: 20px;
-    background-color: rgb(1, 0, 50);
+    background-color: black;
     color: white;
 }
 
-.btn_reg {
+.login_btn_reg {
     margin-top: 10%;
     margin-left: 23%;
     border: 0px;
     font-size: 20px;
-    background-color: rgb(1, 0, 50);
+    background-color: black;
     color: white;
+}
+
+.login_img_social {
+    width: 10%;
+    margin-right: 3%;
+    height: 40%;
 }
