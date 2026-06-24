@@ -37,8 +37,12 @@ body {
     overflow-x: hidden;
 }
 
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
 .dark {
-    background-color: rgb(1, 0, 50);
+    background-color: black;
     color: white;
 }
 
@@ -196,12 +200,12 @@ body {
 
 
 .ctg {
-    display: none;
     margin-left: 20px;
-    margin-top: 8px;
+    margin-top: 5px;
+    line-height: 23px;
 }
 
-.forum:hover .forum {
+/* .forum:hover .forum {
     display: block;
 }
 
@@ -227,6 +231,4 @@ body {
 
 .ranking:hover .rank {
     display: block;
-}
-
-
+} */

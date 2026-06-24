@@ -1,9 +1,17 @@
 import { useNavigate } from 'react-router'
+import { useState } from 'react';
 import profileImg from '../../image/캡처.PNG';
 import "./Sidebar.css"
 
 function Sidebar() {
     let navigate = useNavigate()
+    const [forumOpen, setForumOpen] = useState(false);
+    const [feOpen, setFeOpen] = useState(false);
+    const [beOpen, setBeOpen] = useState(false);
+    const [gameOpen, setGameOpen] = useState(false);
+    const [teamOpen, setTeamOpen] = useState(false);
+    const [rankOpen, setRankOpen] = useState(false);
+
 
     return (
         <aside className="sidebar dark">
@@ -20,7 +28,7 @@ function Sidebar() {
                     <h2>로그인</h2>
                 </div>
 
-                <div className="profileCard">
+                <div className="profileCard" onClick={() => { navigate("/mypage") }}>
                     <div className="userInfo">
                         <img src={profileImg} id="photo" alt="profile" />
 
@@ -46,53 +54,96 @@ function Sidebar() {
 
             <nav className="category">
                 <div className="forum">
-                    ▽ 포럼
+                    <div
+                        className="category-title"
+                        onClick={() => {
+                            setForumOpen(prev => !prev);
+                        }}
+                    >
+                        {forumOpen ? "△" : "▽"} 포럼
+                    </div>
 
-                    <div className="forum ctg">
-                        <div className="fe">
-                            ▽ FE
+                    {forumOpen && (
+                        <div className="forum ctg">
+                            <div className="fe">
+                                <div
+                                    className="category-title"
+                                    onClick={() => {
+                                        setFeOpen(prev => !prev);
+                                    }}
+                                >
+                                    {feOpen ? "△" : "▽"} FE
+                                </div>
 
-                            <div className="fe ctg">
-                                <p>HTML</p>
-                                <p>CSS</p>
-                                <p>JavaScript</p>
-                                <p>React</p>
+                                {feOpen && (
+                                    <div className="fe ctg">
+                                        <p onClick={() => navigate("/forum/fe/html")}>- HTML</p>
+                                        <p onClick={() => navigate("/forum/fe/css")}>- CSS</p>
+                                        <p onClick={() => navigate("/forum/fe/javascript")}>- JavaScript</p>
+                                        <p onClick={() => navigate("/forum/fe/react")}>- React</p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="be">
+                                <div
+                                    className="category-title"
+                                    onClick={() => {
+                                        setBeOpen(prev => !prev);
+                                    }}
+                                >
+                                    {beOpen ? "△" : "▽"} BE
+                                </div>
+
+                                {beOpen && (
+                                    <div className="be ctg">
+                                        <p onClick={() => navigate("/forum/be/java")}>- JAVA</p>
+                                        <p onClick={() => navigate("/forum/be/node")}>- Node.js</p>
+                                        <p onClick={() => navigate("/forum/be/python")}>- Python</p>
+                                        <p onClick={() => navigate("/forum/be/go")}>- Go</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
+                    )}
+                </div>
 
-                        <div className="be">
-                            ▽ BE
-
-                            <div className="be ctg">
-                                <p>JAVA</p>
-                                <p>Node.js</p>
-                                <p>Python</p>
-                                <p>Go</p>
-                            </div>
+                <div className="minigame" onClick={() => {
+                    setGameOpen(!gameOpen);
+                }}>
+                    {gameOpen ? "△" : "▽"} 미니게임
+                    {gameOpen && (
+                        <div className="game ctg">
+                            <p onClick={() => { navigate("/game/blankgame") }}>빈칸 맞추기</p>
                         </div>
-                    </div>
+                    )}
+
                 </div>
 
-                <div className="minigame">
-                    ▽ 미니게임
-                    <div className="game ctg">
-                        <p>빈칸 맞추기</p>
-                    </div>
+                <div className="teamP" onClick={() => {
+                    setTeamOpen(!teamOpen);
+                }}>
+                    {teamOpen ? "△" : "▽"} 팀 프로젝트
+                    {teamOpen && (
+                        <div className="team ctg">
+                            <p onClick={() => { navigate("/team/recruitment") }}>구인/구직</p>
+                            <p onClick={() => { navigate("/team/private")}}>팀 전용 작업실</p>
+
+                        </div>
+                    )}
+
                 </div>
 
-                <div className="teamP">
-                    ▽ 팀 프로젝트
-                    <div className="team ctg">
-                        <p>구인 / 구직</p>
-                        <p>팀 전용 작업실</p>
-                    </div>
-                </div>
+                <div className="ranking" onClick={() => {
+                    setRankOpen(!rankOpen);
+                }}>
+                    {rankOpen ? "△" : "▽"} 랭킹
+                    {rankOpen && (
+                        <div className="rank ctg">
+                            <p onClick={()=>{ navigate("/rank/level")}}>레벨 랭킹</p>
+                        </div>
+                    )}
 
-                <div className="ranking">
-                    ▽ 랭킹
-                    <div className="rank ctg">
-                        <p>레벨 랭킹</p>
-                    </div>
                 </div>
             </nav>
 
