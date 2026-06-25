@@ -1,33 +1,39 @@
 import './Register.css';
 import { useNavigate } from 'react-router';
+import { Form } from 'react-bootstrap';
 function Register() {
-    let str1 = '이름 입력';
-    let str2 = "닉네임 입력";
-    let str3 = '이메일 입력';
-    let str4 = '아이디 입력 (소문자+숫자 6~12자 입력)';
-    let str5 = '비밀번호 입력 (대소문자+숫자+특수기호 8자 이상 입력)';
     let navigate = useNavigate();
     return (
-        <div className='reg_container'>
-            <form className='reg_form' onClick={(event) => {
-                event.preventDefault();
-            }}>
-                <div className='reg_box'>
-                    <p className='reg_title'>회원가입</p>
-                    <div className='reg_line'></div>
-                    <span className='reg_textColor'>이름</span><input className='reg_inputName' type='text' placeholder={str1}></input><br></br>
-                    <span className='reg_textColor'>닉네임</span><input className='reg_inputNick' type='text' placeholder={str2}></input><br></br>
-                    <span className='reg_textColor'>이메일</span><input className='reg_inputEmail' type='text' placeholder={str3}></input><br></br>
-                    <span className='reg_textColor'>아이디</span><input className='reg_inputID' type='text' placeholder={str4}></input><br></br>
-                    <span className='reg_textColor'>비밀번호</span><input className='reg_inputPW' type='password' placeholder={str5}></input><br></br>
-                    <input className='reg_check_reg1' type='checkbox'></input><span className='reg_textColor'>서비스 이용약관 동의</span><br></br>
-                    <input className='reg_check_reg2' type='checkbox'></input><span className='reg_textColor'>개인정보 처리방침 동의</span><br></br>
-                    <button className='reg_btn_goLog' onClick={() => {
-                        navigate('/login');
-                    }}>로그인으로 돌아가기</button>
-                    <button className='reg_btn_regCom' onClick={() => {
-                        alert('가입이 완료되었습니다.');
-                    }}>가입하기</button>
+        <div className='register_box'>
+            <form className='register_form'>
+                <p id='title' style={{ marginBottom: '3%', marginTop: '3%' }}>회원가입</p>
+                <div id='line'></div>
+                <div className='register_inputBox'>
+                    <div className='register_inputNameBox'>
+                        <p>이름</p>
+                        <p>닉네임</p>
+                        <p>이메일</p>
+                        <p>아이디</p>
+                        <p>비밀번호</p>
+                    </div>
+                    <div className='register_inputTextBox'>
+                        <input type='text' placeholder='이름을 입력하세요.'></input>
+                        <input type='text' placeholder='닉네임을 입력하세요.'></input>
+                        <input type='text' placeholder='이메일을 입력하세요.'></input>
+                        <input type='text' placeholder='아이디를 입력하세요.'></input>
+                        <input type='password' placeholder='비밀번호를 입력하세요.'></input>
+                    </div>
+                </div>
+                <div id='line'></div>
+                <div className='register_checkbox'>
+                    <input type='checkbox'></input>
+                    <span id='checklist'>서비스 이용약관 동의</span>
+                    <input type='checkbox' style={{ marginLeft: '10%' }}></input>
+                    <span id='checklist'>개인정보 처리방침 동의</span>
+                </div>
+                <div id='line'></div>
+                <div className='register_btn_complete'>
+                    <button id='button' onClick={() => { alert('가입이 완료되었습니다.'); }}>가 입 하 기</button>
                 </div>
             </form >
         </div >

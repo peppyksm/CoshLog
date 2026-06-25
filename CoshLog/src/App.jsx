@@ -29,7 +29,8 @@ function App() {
       </Route>
 
       <Route path="/*" element={<Error />} />
-      <Route path="/login" element={<div>로그인</div>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   )
 }

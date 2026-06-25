@@ -4,112 +4,137 @@
     box-sizing: border-box;
 }
 
-.login_container {
+.login_box {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
-    align-items: center;
-    align-content: center;
     justify-content: center;
+    align-items: center;
 }
 
 .login_form {
+    background-color: black;
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.login_inputBox {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+.login_inputNameBox {
+    width: 20%;
+    height: auto;
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    color: white;
+    border-radius: 10px;
+    justify-items: end;
+    justify-content: space-evenly;
+    align-items: end;
+}
+
+.login_inputNameBox p {
+    margin-bottom: 20%;
+}
+
+.login_inputTextBox {
+    width: 80%;
+    height: auto;
+    background-color: black;
+    flex-direction: column;
+    padding-left: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login_inputTextBox input {
+    width: 90%;
+    margin-bottom: 3%;
+    height: 50%;
+}
+
+.login_loginBtnBox {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-.login_box {
+.login_loginBtnBox button {
     width: 50%;
-    height: 90%;
-    background-Color: black;
-    justify-items: center;
-    justify-content: center;
-    justify-items: center;
-    border-radius: 20px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: white;
 }
 
-.login_title {
-    font-size: 45px;
-    height: 20px;
-    color: white;
-}
-
-.login_line {
-    width: 100%;
-    border: 1px solid white;
-    margin-top: 10%;
-}
-
-.login_inputID {
-    width: 90%;
-    height: 10%;
-    margin-top: 5%;
-    margin-left: 4%;
-}
-
-.login_inputPW {
-    width: 90%;
-    height: 10%;
+.login_socialLoginBox {
+    display: flex;
+    justify-content: space-evenly;
     margin-top: 3%;
-    margin-left: 4%;
 }
 
-.login_btn {
-    width: 45%;
-    margin-left: 27%;
-    margin-top: 6%;
-    height: 10%;
+.login_socialLoginBox button {
+    width: 40%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
     background-color: white;
+}
+
+.login_findBox {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 18px;
+}
+
+#title {
+
+    color: white;
+
     font-size: 25px;
-    color: black;
-    border-radius: 20px;
+
+    justify-self: center;
+
 }
 
-.login_btn_naver {
-    width: 40%;
-    height: 10%;
-    background-color: white;
-    margin-top: 4%;
-    margin-left: 5%;
-    font-size: 20px;
-    color: black;
-    padding-right: 3%;
-    border-radius: 20px;
+#line {
+
+    border: solid 1px white;
+
+    width: 100%;
+
 }
 
-.login_btn_google {
-    width: 40%;
-    height: 10%;
-    background-color: white;
-    margin-left: 10%;
-    font-size: 20px;
-    color: black;
-    border-radius: 20px;
+#text {
+    width: 80%;
 }
 
-.login_btn_findID {
-    margin-top: 10%;
-    margin-left: 25%;
-    border: 0px;
-    font-size: 20px;
-    background-color: black;
+#or {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
     color: white;
 }
 
-.login_btn_reg {
-    margin-top: 10%;
-    margin-left: 23%;
-    border: 0px;
-    font-size: 20px;
-    background-color: black;
-    color: white;
-}
-
-.login_img_social {
+#img1 {
     width: 10%;
-    margin-right: 3%;
-    height: 40%;
+    height: 35%;
+    margin-right: 5%;
+    border-radius: 5px;
+}
+
+#img2 {
+    width: 10%;
+    height: 45%;
+    margin-right: 5%;
+    border-radius: 5px;
 }
