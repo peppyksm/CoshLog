@@ -1,0 +1,391 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+html,
+
+body {
+
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+}
+
+
+
+.myPage_container {
+
+    width: 100vw;
+
+    min-height: 100vh;
+
+    height: auto;
+
+    display: flex;
+
+    background-color: lightgray;
+
+}
+
+
+
+.myPage_form {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    margin-top: 2%;
+
+    margin-left: 30%;
+
+}
+
+
+
+.myPage_img_profile {
+
+    border-radius: 100px;
+
+    width: 15%;
+
+    height: 10%;
+
+    margin-top: 2%;
+
+}
+
+
+
+.myPage_text_title {
+
+    font-size: 30px;
+
+}
+
+
+
+.myPage_text_main {
+
+    font-size: 20px;
+
+}
+
+
+
+.myPage_text_mainDaily {
+
+    font-size: 20px;
+
+    margin-bottom: 8%;
+
+}
+
+
+
+.myPage_line {
+
+    border: 1px solid black;
+
+    width: 90%;
+
+    margin-top: 3%;
+
+}
+
+
+
+.myPage_line1 {
+
+    border: 1px solid black;
+
+    width: 50%;
+
+    margin-top: 4%;
+
+    margin-left: 20%;
+
+}
+
+
+
+.myPage_profileArea {
+
+    margin-left: 20%;
+
+    margin-top: 2%;
+
+    display: flex;
+
+}
+
+
+
+.myPage_btn_chnImg {
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    margin-top: 3%;
+
+    width: 70%;
+
+}
+
+
+
+.myPage_box {
+
+    height: 100%;
+
+}
+
+
+
+.myPage_profileArea1 {
+
+    margin-left: 3%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    align-items: center;
+
+    margin-top: 1%;
+
+}
+
+
+
+.myPage_badgeArea {
+
+    margin-left: 20%;
+
+    margin-top: 2%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+.myPage_badgeImgArea {
+
+    display: flex;
+
+    margin-top: 2%;
+
+}
+
+
+
+.myPage_dailyArea {
+
+    display: flex;
+
+}
+
+
+
+.myPage_dailyArea1 {
+
+    display: flex;
+
+    margin-left: 20%;
+
+    margin-top: 2%;
+
+    flex-direction: column;
+
+}
+
+
+
+.myPage_dailyArea2 {
+
+    display: flex;
+
+    margin-left: 3%;
+
+    margin-top: 5%;
+
+    flex-direction: column;
+
+}
+
+
+
+.myPage_chnPWArea {
+
+    margin-left: 20%;
+
+    margin-top: 2%;
+
+    height: auto;
+
+}
+
+
+
+.myPage_text_chnPW {
+
+    font-size: 20px;
+
+}
+
+
+
+.myPage_text_chnPW1 {
+
+    margin-top: 1%;
+
+}
+
+
+
+.myPage_inputText_chnPW {
+
+    margin-left: 5%;
+
+    width: auto;
+
+    height: 40px;
+
+    border-radius: 5px;
+
+    margin-top: 3%;
+
+}
+
+
+
+.myPage_btn_chnPW {
+
+    margin-left: 12%;
+
+    width: 15%;
+
+    height: 40px;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+}
+
+
+
+.myPage_text_daily1 {
+
+    margin-top: 8%;
+
+}
+
+
+
+.myPage_text_daily2 {
+
+    margin-top: 14%;
+
+}
+
+
+
+.myPage_inputText_daily1 {
+
+    border-radius: 5px;
+
+    width: 50%;
+
+    margin-right: 2%;
+
+    height: 100%;
+
+    margin-top: 8%;
+
+}
+
+
+
+.myPage_inputText_daily2 {
+
+    border-radius: 5px;
+
+    width: 50%;
+
+    margin-right: 2%;
+
+    height: 80%;
+
+    margin-top: 12%;
+
+}
+
+
+
+.myPage_btn_daily {
+
+    height: 30%;
+
+    width: 200%;
+
+    margin-left: 100%;
+
+    margin-top: 185%;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+}
+
+
+
+.myPage_btn_chnNick {
+
+    margin-left: 2%;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    height: 33%;
+
+    align-self: center;
+
+    width: 10%;
+
+}
+
+
+
+.myPage_img_badge {
+
+    width: 10%;
+
+    height: 10%;
+
+    border-radius: 50px;
+
+    align-self: center;
+
+}
