@@ -17,7 +17,7 @@ function Sidebar() {
         <aside className="sidebar dark">
 
             <div className="sidebarTop">
-                <h1 className="logo">CoshLog</h1>
+                <h1 className="logo" onClick={()=>{navigate("/")}}>CoshLog</h1>
 
                 <div
                     className="login"

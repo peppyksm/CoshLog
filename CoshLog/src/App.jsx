@@ -1,8 +1,17 @@
 import { Routes, Route } from 'react-router'
 import Layout from './pages/Layout'
-import Home from './pages/home'
+import Home from './pages/Home'
 import './App.css'
-import Error from './pages/error'
+import Error from './pages/Error'
+import Html from './pages/forum/Html'
+import Css from './pages/forum/Css'
+import JavaScript from './pages/forum/JavaScript'
+import React from './pages/forum/React'
+import Java from './pages/forum/Java'
+import Node from './pages/forum/Node'
+import Python from './pages/forum/Python'
+import Go from './pages/forum/Go'
+
 
 function App() {
   return (
@@ -10,14 +19,14 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/mypage" element={<div>마이페이지</div>} />
-        <Route path="/forum/fe/html" element={<div>HTML게시판</div>} />
-        <Route path="/forum/fe/css" element={<div>CSS게시판</div>} />
-        <Route path="/forum/fe/javascript" element={<div>javascript게시판</div>} />
-        <Route path="/forum/fe/react" element={<div>react게시판</div>} />
-        <Route path="/forum/be/java" element={<div>java 게시판</div>} />
-        <Route path="/forum/be/node" element={<div>node게시판</div>} />
-        <Route path="/forum/be/python" element={<div>python게시판</div>} />
-        <Route path="/forum/be/go" element={<div>go게시판</div>} />
+        <Route path="/forum/fe/html" element={<Html/>} />
+        <Route path="/forum/fe/css" element={<Css/>} />
+        <Route path="/forum/fe/javascript" element={<JavaScript/>} />
+        <Route path="/forum/fe/react" element={<React/>} />
+        <Route path="/forum/be/java" element={<Java/>} />
+        <Route path="/forum/be/node" element={<Node/>} />
+        <Route path="/forum/be/python" element={<Python/>} />
+        <Route path="/forum/be/go" element={<Go/>} />
         <Route path="/game/blankgame" element={<div>빈칸맞추기게임</div>} />
         <Route path="/team/recruitment" element={<div>구인/구직 게시판</div>} />
         <Route path="/team/private" element={<div>팀 전용 작업실</div>} />

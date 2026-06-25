@@ -1,0 +1,61 @@
+
+
+
+.HeaderNav {
+    width: 100%;
+}
+
+.nav {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    /* border: inset 2px white; */
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+
+    overflow: visible;
+}
+
+.navCtg {
+    width: 90px;
+    margin-left: 30px;
+    position: relative;
+}
+
+.bgBlack {
+    position: absolute;
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.navFe:hover .navFeHo {
+    display: block;
+}
+
+.navBe:hover .navBeHo {
+    display: block;
+}
+
+.navGame:hover .navGameHo {
+    display: block;
+}
+
+.navTeam:hover .navTeamHo {
+    display: block;
+}
+
+.navRank:hover .navRankHo {
+    display: block;
+}
+
+.navTeamHo {
+    width: 110px;
+}
+
