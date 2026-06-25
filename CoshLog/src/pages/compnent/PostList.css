@@ -1,0 +1,40 @@
+#all, #general,#info, #qna{
+    display: none;
+}
+
+.postselectCont{
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    align-items: center;
+}
+
+#all:checked~.postselectCont .allBtn{
+    background-color: black;
+    color: white;
+}
+
+#general:checked~.postselectCont .generalBtn{
+    background-color: black;
+    color: white;
+}
+
+#info:checked~.postselectCont .infoBtn{
+    background-color: black;
+    color: white;
+}
+
+#qna:checked~.postselectCont .qnaBtn{
+    background-color: black;
+    color: white;
+}
+
+.post{
+    width:53px;
+    border: solid 4px black;
+    cursor: pointer;
+    margin-left: 60%;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+}

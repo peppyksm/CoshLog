@@ -35,6 +35,8 @@ body {
 
     overflow-y: auto;
     overflow-x: hidden;
+
+    /* border: inset 2px white; */
 }
 
 .sidebar::-webkit-scrollbar {

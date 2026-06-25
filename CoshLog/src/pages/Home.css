@@ -1,0 +1,157 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.homePage {
+    width: 100%;
+}
+
+.header {
+    margin: 30px;
+}
+
+
+.bestPost {
+    border: solid 2px black;
+    height: 30px;
+    margin-top: 10px;
+    width: 40%;
+}
+
+#be,
+#fe {
+    display: none;
+}
+
+.selectBTN {
+    border: solid 2px black;
+    border-radius: 20px;
+    width: 100px;
+    height: 33px;
+    text-align: center;
+}
+
+.selectBTN:hover{
+    cursor: pointer;
+}
+
+#fe:checked~.btnContainer .feBtn {
+    background-color: black;
+    color: white;
+}
+
+#be:checked~.btnContainer .beBtn {
+    background-color: black;
+    color: white;
+}
+
+.btnContainer {
+    margin-top: 10%;
+    margin-left: 35%;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#fe:checked~.beCon {
+    display: none;
+}
+
+#be:checked~.feCon {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ctgContainer {
+    /* width: 300px;
+    height: 500px; */
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ctgSwiper {
+    width: 900px;
+    height: 500px;
+    overflow: visible;
+}
+
+.Box {
+    width: 260px;
+    height: 500px;
+    border-radius: 24px;
+
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.85);
+    transition: 0.3s;
+
+    text-align: center;
+
+    flex-direction: column;
+
+    border: solid 2px black;
+    color: black;
+}
+
+
+.Box.swiper-slide-active {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1.15);
+    z-index: 10;
+    background-color: lightgray;
+}
+
+
+.Box.swiper-slide-prev,
+.Box.swiper-slide-next {
+    opacity: 0.45;
+    filter: blur(2px);
+    transform: scale(0.9);
+    z-index: 5;
+}
+
+
+.Box:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.forumPage{
+    width: 100%;
+}
