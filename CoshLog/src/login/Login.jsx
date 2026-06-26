@@ -28,11 +28,19 @@ function Login() {
                     <p>or</p>
                 </div>
                 <div className='login_socialLoginBox'>
-                    <button><img id='img1' src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/3840px-Google_%22G%22_logo.svg.png' />구글 로그인</button>
-                    <button><img id='img2' src='https://static.wikia.nocookie.net/logopedia/images/d/d8/Naver_icon_2018.svg/revision/latest/scale-to-width-down/200?cb=20210322150331' />네이버 로그인</button>
+                    <img id='img1' onClick={() => {
+                        alert('구글 계정으로 로그인되었습니다.');
+                        navigate('/');
+                    }} src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/3840px-Google_%22G%22_logo.svg.png' />
+                    <img id='img2' onClick={() => {
+                        alert('네이버 계정으로 로그인되었습니다.');
+                        navigate('/');
+                    }} src='https://static.wikia.nocookie.net/logopedia/images/d/d8/Naver_icon_2018.svg/revision/latest/scale-to-width-down/200?cb=20210322150331' />
                 </div>
                 <div className='login_findBox'>
-                    <span>아이디 찾기</span>
+                    <span onClick={() => {
+                        alert('아이디는 찾을 수 없습니다.\n\n\n이용해주셔서 감사합니다.');
+                    }}>아이디 찾기</span>
                     <span onClick={() => {
                         navigate('/register');
                     }}>회원가입</span>

@@ -26,14 +26,21 @@ function Register() {
                 </div>
                 <div id='line'></div>
                 <div className='register_checkbox'>
-                    <input type='checkbox'></input>
-                    <span id='checklist'>서비스 이용약관 동의</span>
-                    <input type='checkbox' style={{ marginLeft: '10%' }}></input>
-                    <span id='checklist'>개인정보 처리방침 동의</span>
+                    <div className='register_checkbox1'>
+                        <input type='checkbox'></input>
+                        <span id='checklist'>서비스 이용약관 동의</span>
+                    </div>
+                    <div className='register_checkbox2'>
+                        <input type='checkbox' style={{ marginLeft: '10%' }}></input>
+                        <span id='checklist'>개인정보 처리방침 동의</span>
+                    </div>
                 </div>
                 <div id='line'></div>
                 <div className='register_btn_complete'>
-                    <button id='button' onClick={() => { alert('가입이 완료되었습니다.'); }}>가 입 하 기</button>
+                    <button id='button' onClick={() => {
+                        alert('가입이 완료되었습니다.');
+                        navigate('/');
+                    }}>가 입 하 기</button>
                 </div>
             </form >
         </div >
