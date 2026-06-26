@@ -14,6 +14,9 @@ import Java from './pages/forum/Java'
 import Node from './pages/forum/Node'
 import Python from './pages/forum/Python'
 import Go from './pages/forum/Go'
+import Write from './pages/Write';
+import TeamRecruitment from './pages/TeamRecruitment';
+import TeamPrivate from './pages/TeamPrivate';
 
 
 function App() {
@@ -30,10 +33,12 @@ function App() {
         <Route path="/forum/be/node" element={<Node />} />
         <Route path="/forum/be/python" element={<Python />} />
         <Route path="/forum/be/go" element={<Go />} />
+        <Route path='/forum/write' element={<Write />} />
         <Route path="/game/blankgame" element={<div>빈칸맞추기게임</div>} />
-        <Route path="/team/recruitment" element={<div>구인/구직 게시판</div>} />
-        <Route path="/team/private" element={<div>팀 전용 작업실</div>} />
+        <Route path="/team/recruitment" element={<TeamRecruitment/>} />
+        <Route path="/team/private" element={<TeamPrivate/>} />
         <Route path="/rank/level" element={<div>레벨 랭킹</div>} />
+
       </Route>
 
       <Route path="/*" element={<Error />} />

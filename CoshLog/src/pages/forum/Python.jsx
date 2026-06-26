@@ -1,5 +1,5 @@
 import HeaderNav from "../compnent/HeaderNav";
-import PostList from "../compnent/PostList";
+import ForumPostList from "../compnent/ForumPostList";
 import "../compnent/HeaderNav.css";
 import "../compnent/PostList.css";
 
@@ -13,7 +13,7 @@ function Python() {
                 <h1>BE / Python</h1>
             </div>
             {HeaderNav()}
-            {PostList()}
+            {ForumPostList()}
         </div>
     )
 }
