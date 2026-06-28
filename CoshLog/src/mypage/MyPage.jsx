@@ -1,21 +1,35 @@
 import './MyPage.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 function MyPage() {
-    let [nickName, setNickName] = useState('');
+    useEffect(() => {
+        localStorage.setItem('nickka', JSON.stringify(nickName));
+    });
+    const [nickName, setNickName] = useState(() => {
+        const savedNick = localStorage.getItem('nickka');
+        if (savedNick != '') {
+            return (JSON.parse(savedNick));
+        } else {
+            return ('');
+        }
+        // return savedNick ? JSON.parse(savedNick) : '';
+    });
     return (
         <div className='myPage_container'>
-            <form className='myPage_form' onClick={(event) => {
+            <form className='myPage_form' onSubmit={(event) => {
                 event.preventDefault();
             }}>
                 <div className='myPage_box'>
                     <h1 className='myPage_text_title'>마이 페이지</h1>
                     <div className='myPage_line'></div>
                     <div className='myPage_profileArea'>
-                        <img className='myPage_img_profile' src='https://i.namu.wiki/i/saCN7RitpGX_i9kdIAWLfwYg_XCXW8piTqn4Vw8YOF_d3Fh3EUzU81gOXPiVVJSf5y08cj_zHKfhoVJjuoAmqw.webp' />
+                        <img className='myPage_img_profile' src='https://i.namu.wiki/i/Du5yyTqmPKcRumUKbwekunAsjxUCmSsc8WWnpbPV93O2ldnXDIIt2KFHrFF9k8DihDbixSusR8yvYKqBUfLHwQ.webp' />
                         <div className='myPage_profileArea1'>
                             <button className='myPage_btn_chnImg'>사진 변경</button>
-                            <span>닉네임: <span>{nickName}</span></span>
-                            <span>현재 레벨: LV.264</span>
+                            <span>닉네임: <span>{nickName || '없음'}</span></span>
+                            <span>현재 레벨: LV.30</span>
+                            <span>칭호 : 주니어 모험가</span>
+                            <span>골드비치 현피 전적 0승 1패</span>
+                            <span>보유 스킬 : 달팽이 던지기</span>
                         </div>
                         <button className='myPage_btn_chnNick' onClick={() => {
                             const newNick = prompt();
@@ -32,7 +46,8 @@ function MyPage() {
                         <div className='myPage_badgeImgArea'>
                             <img className='myPage_img_badge' src='https://static.wikia.nocookie.net/maplestorym/images/4/45/%EB%AA%AC%EC%8A%A4%ED%84%B0_%EB%A7%88%EB%85%B8.png/revision/latest/thumbnail/width/360/height/450?cb=20180201154835&path-prefix=ko' />
                             <img className='myPage_img_badge' src='https://i.namu.wiki/i/C-9ZpgUm8WmFFs0i-h2SJKWjkErdXTWgEcJSI3NQGCx5LSOXwkxSvxImOwe4lkHnqHJUT0K_TuZyaMRTBJDZyQ.webp' />
-                            <img className='myPage_img_badge' src='https://i.namu.wiki/i/Du5yyTqmPKcRumUKbwekunAsjxUCmSsc8WWnpbPV93O2ldnXDIIt2KFHrFF9k8DihDbixSusR8yvYKqBUfLHwQ.webp' />
+                            <img className='myPage_img_badge' src='https://i.namu.wiki/i/saCN7RitpGX_i9kdIAWLfwYg_XCXW8piTqn4Vw8YOF_d3Fh3EUzU81gOXPiVVJSf5y08cj_zHKfhoVJjuoAmqw.webp' />
+                            <img className='myPage_img_badge' src='https://cdn.gamemeca.com/trees/0001/399/026/gm716075_cm_171015_ktj_300.jpg' />
                         </div>
                     </div>
                     <div className='myPage_line1'></div>

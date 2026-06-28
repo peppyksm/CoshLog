@@ -15,6 +15,7 @@ import Node from './pages/forum/Node'
 import Python from './pages/forum/Python'
 import Go from './pages/forum/Go'
 import Quiz from './quiz/Quiz';
+import Ranking from './ranking/Ranking';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
         <Route path="/game/blankgame" element={<Quiz />} />
         <Route path="/team/recruitment" element={<div>구인/구직 게시판</div>} />
         <Route path="/team/private" element={<div>팀 전용 작업실</div>} />
-        <Route path="/rank/level" element={<div>레벨 랭킹</div>} />
+        <Route path="/rank/level" element={<Ranking />} />
       </Route>
 
       <Route path="/*" element={<Error />} />

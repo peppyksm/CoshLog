@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import profileImg from '../../image/캡처.PNG';
 import "./Sidebar.css"
 
@@ -11,13 +11,21 @@ function Sidebar() {
     const [gameOpen, setGameOpen] = useState(false);
     const [teamOpen, setTeamOpen] = useState(false);
     const [rankOpen, setRankOpen] = useState(false);
+    const [nickName, setNickName] = useState('');
+
+    useEffect(() => {
+        const savedNick = localStorage.getItem('nickka');
+        if (savedNick) {
+            setNickName(JSON.parse(savedNick));
+        }
+    })
 
 
     return (
         <aside className="sidebar dark">
 
             <div className="sidebarTop">
-                <h1 className="logo" onClick={()=>{navigate("/")}}>CoshLog</h1>
+                <h1 className="logo" onClick={() => { navigate("/") }}>CoshLog</h1>
 
                 <div
                     className="login"
@@ -33,7 +41,7 @@ function Sidebar() {
                         <img src={profileImg} id="photo" alt="profile" />
 
                         <div className="infoText">
-                            <h3>하루카</h3>
+                            <h3>{nickName || '게스트'}</h3>
                             <h4>Lv.300</h4>
                         </div>
                     </div>
@@ -127,7 +135,7 @@ function Sidebar() {
                     {teamOpen && (
                         <div className="team ctg">
                             <p onClick={() => { navigate("/team/recruitment") }}>구인/구직</p>
-                            <p onClick={() => { navigate("/team/private")}}>팀 전용 작업실</p>
+                            <p onClick={() => { navigate("/team/private") }}>팀 전용 작업실</p>
 
                         </div>
                     )}
@@ -140,7 +148,7 @@ function Sidebar() {
                     {rankOpen ? "△" : "▽"} 랭킹
                     {rankOpen && (
                         <div className="rank ctg">
-                            <p onClick={()=>{ navigate("/rank/level")}}>레벨 랭킹</p>
+                            <p onClick={() => { navigate("/rank/level") }}>레벨 랭킹</p>
                         </div>
                     )}
 

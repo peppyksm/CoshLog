@@ -15,7 +15,7 @@ function Login() {
                     </div>
                     <div className='login_inputTextBox'>
                         <input type='text'></input>
-                        <input type='text'></input>
+                        <input type='password'></input>
                     </div>
                 </div>
                 <div className='login_loginBtnBox'>
