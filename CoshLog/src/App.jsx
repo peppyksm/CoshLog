@@ -17,6 +17,7 @@ import Go from './pages/forum/Go'
 import Write from './pages/Write';
 import TeamRecruitment from './pages/TeamRecruitment';
 import TeamPrivate from './pages/TeamPrivate';
+import ViewPost from './pages/ViewPost';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/team/recruitment" element={<TeamRecruitment/>} />
         <Route path="/team/private" element={<TeamPrivate/>} />
         <Route path="/rank/level" element={<div>레벨 랭킹</div>} />
+        <Route path="/viewpost" element={<ViewPost/>} />
 
       </Route>
 

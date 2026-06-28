@@ -1,13 +1,14 @@
-#title {
+#Writetitle {
     width: 60%;
     font-size: 17px;
     margin-top: 1%;
+    color: black;
 }
 
 #writeCtg,
 #writeFe,
 #writeBe {
-    font-size: 17px;
+    /* font-size: 17px; */
 }
 
 #writeFe,
@@ -23,6 +24,7 @@
     resize: none;
     font-size: 14px;
 }
+
 
 #submitBtn {
     width: 60px;

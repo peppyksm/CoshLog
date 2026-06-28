@@ -1,0 +1,29 @@
+.viewTitle{
+    font-weight: bold;
+}
+
+.viewInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.viewContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.viewCode, .viewMemo{
+    border: solid 1px black;
+    width: 49%;
+    height: 65vh;
+}
+
+.viewBtnContainer{
+    margin-top: 2%;
+    margin-left: 92%;
+}
+
+.viewBtnContainer button{
+
+    width: 45%;
+}
