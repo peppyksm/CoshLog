@@ -55,7 +55,7 @@ body,
 }
 
 .btnContainer {
-    margin-top: 10%;
+    margin-top: 3%;
     margin-left: 35%;
     width: 30%;
     display: flex;
@@ -107,8 +107,8 @@ body,
     border-radius: 24px;
 
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: space-between;
+    align-items: center; 
 
     font-size: 32px;
     font-weight: 800;
@@ -122,9 +122,11 @@ body,
     text-align: center;
 
     flex-direction: column;
+    
 
     border: solid 2px black;
     color: black;
+    
 }
 
 
@@ -151,7 +153,74 @@ body,
     pointer-events: none;
 }
 
+.quickMove{
+    width: 30%;
+    height: 7%;
+    margin-bottom: 5%;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
 
 .forumPage{
     width: 100%;
+}
+
+.WritePage{
+    width: 100%;
+    height: 100vh;
+}
+
+.teamPage{
+    width: 100%;
+    height: 100vh;
+}
+
+
+.explainContainer{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.explainSidebar, .explainForum, .explainTeam, .explainGame, .explainRank, .explainMypage{
+    margin-top: 30%;
+    display: flex;
+}
+
+.fontColor{
+    font-size: 50px;
+    color: rgb(34, 114,235) ;
+}
+
+.underLine{
+    text-decoration: underline;
+}
+
+.explainimg1{
+    width: 50%;
+    border: solid 1px black;
+}
+
+.explainimg2{
+    width: 50%;
+    border: solid 1px black;
+    margin-left: 5%;
+}
+
+.scrollFade {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scrollFade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.explainTeam{
+    margin-bottom: 20%;
 }

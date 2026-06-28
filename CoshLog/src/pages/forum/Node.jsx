@@ -1,5 +1,5 @@
 import HeaderNav from "../compnent/HeaderNav";
-import PostList from "../compnent/PostList";
+import ForumPostList from "../compnent/ForumPostList";
 import "../compnent/HeaderNav.css";
 import "../compnent/PostList.css";
 
@@ -13,7 +13,7 @@ function Node() {
                 <h1>BE / Node.js</h1>
             </div>
             {HeaderNav()}
-            {PostList()}
+            {ForumPostList()}
         </div>
     )
 }

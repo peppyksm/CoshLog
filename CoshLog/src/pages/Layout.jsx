@@ -6,7 +6,10 @@ function Layout() {
     return (
         <div className="layout">
             <Sidebar />
-            <Outlet />
+
+            <main className="pageContent">
+                <Outlet />
+            </main>
         </div>
     )
 }

@@ -1,5 +1,11 @@
 
-function PostList() {
+import { useNavigate } from "react-router";
+
+
+function ForumPostList() {
+
+    let navigate = useNavigate();
+
     return (
         <div className="postList">
             <input type="radio" name="postSelect" id="all" defaultChecked />
@@ -15,7 +21,7 @@ function PostList() {
                 <label htmlFor="info"><div className="selectBTN infoBtn"><h2>정보</h2></div></label>
                 <label htmlFor="qna"><div className="selectBTN qnaBtn"><h2>질문</h2></div></label>
 
-                <div className="post">글쓰기</div>
+                <div className="post" onClick={()=>{navigate("/forum/write")}}>글쓰기</div>
             </div>
 
 
@@ -27,4 +33,4 @@ function PostList() {
     )
 }
 
-export default PostList;
+export default ForumPostList;
