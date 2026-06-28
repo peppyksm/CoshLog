@@ -60,9 +60,13 @@
 }
 
 .register_checkbox {
-    margin-left: 13%;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.register_checkbox1,
+.register_checkbox2 {
+    width: 40%;
 }
 
 .register_checkbox input {
@@ -89,7 +93,8 @@
 
 #checklist {
     color: white;
-    margin-left: 5%;
+    margin-left: 3%;
+    cursor: pointer;
 }
 
 #button {
@@ -97,4 +102,5 @@
     height: 50px;
     background-color: white;
     border-radius: 10px;
+    cursor: pointer;
 }

@@ -14,6 +14,7 @@ import Java from './pages/forum/Java'
 import Node from './pages/forum/Node'
 import Python from './pages/forum/Python'
 import Go from './pages/forum/Go'
+import Quiz from './quiz/Quiz';
 import Write from './pages/Write';
 import TeamRecruitment from './pages/TeamRecruitment';
 import TeamPrivate from './pages/TeamPrivate';
