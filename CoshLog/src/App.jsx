@@ -16,6 +16,10 @@ import Python from './pages/forum/Python'
 import Go from './pages/forum/Go'
 import Quiz from './quiz/Quiz';
 import Ranking from './ranking/Ranking';
+import Write from './pages/Write';
+import TeamRecruitment from './pages/TeamRecruitment';
+import TeamPrivate from './pages/TeamPrivate';
+import ViewPost from './pages/ViewPost';
 
 
 function App() {
@@ -32,10 +36,13 @@ function App() {
         <Route path="/forum/be/node" element={<Node />} />
         <Route path="/forum/be/python" element={<Python />} />
         <Route path="/forum/be/go" element={<Go />} />
+        <Route path='/forum/write' element={<Write />} />
         <Route path="/game/blankgame" element={<Quiz />} />
-        <Route path="/team/recruitment" element={<div>구인/구직 게시판</div>} />
-        <Route path="/team/private" element={<div>팀 전용 작업실</div>} />
+        <Route path="/team/recruitment" element={<TeamRecruitment />} />
+        <Route path="/team/private" element={<TeamPrivate />} />
         <Route path="/rank/level" element={<Ranking />} />
+        <Route path="/viewpost" element={<ViewPost />} />
+
       </Route>
 
       <Route path="/*" element={<Error />} />

@@ -1,5 +1,6 @@
+
 import HeaderNav from "../compnent/HeaderNav";
-import PostList from "../compnent/PostList";
+import ForumPostList from "../compnent/ForumPostList";
 import "../compnent/HeaderNav.css";
 import "../compnent/PostList.css";
 
@@ -13,7 +14,7 @@ function Java() {
                 <h1>BE / Java</h1>
             </div>
             {HeaderNav()}
-            {PostList()}
+            {ForumPostList()}
         </div>
     )
 }
