@@ -12,7 +12,7 @@ function Quiz() {
             <h1 style={{ margin: '30px' }}>빈칸 맞추기</h1>
             <form className='quiz_form'>
                 {/* <div id='line'></div> */}
-                {HeaderNav()};
+                {HeaderNav()}
                 <h3 id='quiz_name'>Q. 다음 코드의 출력 결과가 "Hello World"가 되도록 빈칸을 채우실 수 있을지 여쭤보는 것을 여쭤봐도되는지 물어볼게.</h3>
                 <div className='quiz_main'>
                     <p>console.log( ' Hello <input id='blank' type='text'></input> ' );</p>

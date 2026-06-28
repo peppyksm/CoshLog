@@ -12,7 +12,7 @@ function MyPage() {
             return ('');
         }
         // return savedNick ? JSON.parse(savedNick) : '';
-    });
+    })
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
