@@ -25,6 +25,14 @@
     font-size: 14px;
 }
 
+#writeMemo2{
+    width: 100%;
+    height: 65vh;
+    margin-top: 1%;
+    resize: none;
+    font-size: 14px;
+}
+
 
 #submitBtn {
     width: 60px;

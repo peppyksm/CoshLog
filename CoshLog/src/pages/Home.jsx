@@ -9,6 +9,7 @@ import explainPhoto1 from "../image/home.png";
 import explainPhoto2 from "../image/forum.png";
 import explainPhoto3 from "../image/mypage.png";
 import { useEffect } from "react";
+import CtgCard from "./compnent/CtgCard";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -19,7 +20,7 @@ function Home() {
 
     const [btnChecked, setBtnChecked] = useState(false);
     let navigate = useNavigate();
-    
+
     useEffect(() => {
         const fadeItems = document.querySelectorAll(".scrollFade");
 
@@ -48,8 +49,8 @@ function Home() {
     return (
         <div className="homePage">
 
-            <h1 style={{ textAlign: "center", marginTop: "5%" }}>여기에 뭘 쓸지를 모르겠네</h1>
-            <h1 style={{ textAlign: "center" }}>추천좀 받겠습니다</h1>
+            <h1 style={{ textAlign: "center", marginTop: "5%" }}>앙 기모띠</h1>
+            <h1 style={{ textAlign: "center" }}>잉~ 기분좋구만유~</h1>
 
 
             <input type="radio" name="ctgSelect" id="fe" defaultChecked />
@@ -85,21 +86,25 @@ function Home() {
                 >
                     <SwiperSlide className="Box html">
                         <p>HTML</p>
+                        <CtgCard ctg1="fe" ctg2="html" />
                         <button className="quickMove" onClick={() => { navigate("/forum/fe/html") }} >바로가기</button>
                     </SwiperSlide>
 
                     <SwiperSlide className="Box css">
                         <p>CSS</p>
+                        <CtgCard ctg1="fe" ctg2="css" />
                         <button className="quickMove" onClick={() => { navigate("/forum/fe/css") }}>바로가기</button>
                     </SwiperSlide>
 
                     <SwiperSlide className="Box react">
                         <p>React</p>
+                        <CtgCard ctg1="fe" ctg2="react" />
                         <button className="quickMove" onClick={() => { navigate("/forum/fe/react") }}>바로가기</button>
                     </SwiperSlide>
 
                     <SwiperSlide className="Box javascript">
                         <p>JavaScript</p>
+                        <CtgCard ctg1="fe" ctg2="javaScript" />
                         <button className="quickMove" onClick={() => { navigate("/forum/fe/javascript") }}>바로가기</button>
                     </SwiperSlide>
                 </Swiper>
@@ -126,21 +131,25 @@ function Home() {
                 >
                     <SwiperSlide className="Box java">
                         <p>JAVA</p>
+                        <CtgCard ctg1="be" ctg2="java" />
                         <button className="quickMove" onClick={() => { navigate("/forum/be/java") }}>바로가기</button>
                     </SwiperSlide>
 
                     <SwiperSlide className="Box node">
                         <p>Node.js</p>
+                        <CtgCard ctg1="be" ctg2="node" />
                         <button className="quickMove" onClick={() => { navigate("/forum/be/node") }}>바로가기</button>
                     </SwiperSlide>
 
                     <SwiperSlide className="Box python">
                         <p>Python</p>
+                        <CtgCard ctg1="be" ctg2="python" />
                         <button className="quickMove" onClick={() => { navigate("/forum/be/python") }}>바로가기</button>
                     </SwiperSlide>
 
                     <SwiperSlide className="Box go">
                         <p>Go</p>
+                        <CtgCard ctg1="be" ctg2="go" />
                         <button className="quickMove" onClick={() => { navigate("/forum/be/go") }}>바로가기</button>
                     </SwiperSlide>
                 </Swiper>

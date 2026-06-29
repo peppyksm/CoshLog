@@ -1,5 +1,6 @@
 import HeaderNav from "./compnent/HeaderNav";
 import TeamPostList from "./compnent/TeamPostList";
+import Post from "./compnent/Post";
 
 function TeamRecruitment(){
     return(
@@ -9,6 +10,8 @@ function TeamRecruitment(){
             </div>
             {HeaderNav()}
             {TeamPostList()}
+
+            <Post ctg1 = "team" ctg2 = "findPeople"/>
         </div>
     )
 }

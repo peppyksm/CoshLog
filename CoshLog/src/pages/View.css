@@ -16,6 +16,8 @@
     border: solid 1px black;
     width: 49%;
     height: 65vh;
+    overflow-y: auto;
+    white-space: pre-wrap;
 }
 
 .viewBtnContainer{

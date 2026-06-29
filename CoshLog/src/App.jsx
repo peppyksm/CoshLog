@@ -41,7 +41,7 @@ function App() {
         <Route path="/team/recruitment" element={<TeamRecruitment />} />
         <Route path="/team/private" element={<TeamPrivate />} />
         <Route path="/rank/level" element={<Ranking />} />
-        <Route path="/viewpost" element={<ViewPost />} />
+        <Route path="/viewpost/:id" element={<ViewPost />} />
 
       </Route>
 

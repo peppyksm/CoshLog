@@ -224,3 +224,10 @@ body,
 .explainTeam{
     margin-bottom: 20%;
 }
+
+.cardTitle{
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    
+}
