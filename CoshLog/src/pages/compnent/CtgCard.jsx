@@ -17,7 +17,7 @@ function CtgCard({ ctg1, ctg2 }) {
             {
                 ctgPosts.map((post, indexOf) => (
                     <div className="cardTitle" key={post.id}>
-                        <span>{(indexOf + 1)} - </span>
+                        {/* <span>{(indexOf + 1)} - </span> */}
                         <span style={{ cursor: "pointer"}} onClick={() => {
                             navigate(`/viewpost/${post.id}`);
                         }}> {post.title || "제목 없음"}</span>

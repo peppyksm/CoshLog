@@ -3,6 +3,7 @@
     font-size: 17px;
     margin-top: 1%;
     color: black;
+    padding-left: 0.8%;
 }
 
 #writeCtg,
@@ -23,6 +24,7 @@
     margin-top: 1%;
     resize: none;
     font-size: 14px;
+    padding: 1%;
 }
 
 #writeMemo2{
