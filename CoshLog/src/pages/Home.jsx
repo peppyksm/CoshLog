@@ -19,7 +19,7 @@ function Home() {
 
     const [btnChecked, setBtnChecked] = useState(false);
     let navigate = useNavigate();
-    
+
     useEffect(() => {
         const fadeItems = document.querySelectorAll(".scrollFade");
 
@@ -48,8 +48,8 @@ function Home() {
     return (
         <div className="homePage">
 
-            <h1 style={{ textAlign: "center", marginTop: "5%" }}>여기에 뭘 쓸지를 모르겠네</h1>
-            <h1 style={{ textAlign: "center" }}>추천좀 받겠습니다</h1>
+            <h1 style={{ textAlign: "center", marginTop: "5%" }}>불편하면</h1>
+            <h1 style={{ textAlign: "center" }}>자세를 고쳐앉아</h1>
 
 
             <input type="radio" name="ctgSelect" id="fe" defaultChecked />
