@@ -2,10 +2,10 @@ import './MyPage.css';
 import React, { useState, useEffect } from 'react';
 function MyPage() {
     useEffect(() => {
-        localStorage.setItem('name', JSON.stringify(nickName));
+        localStorage.setItem('nickka', JSON.stringify(nickName));
     });
     const [nickName, setNickName] = useState(() => {
-        const savedNick = localStorage.getItem('name');
+        const savedNick = localStorage.getItem('nickka');
         if (savedNick != '') {
             return (JSON.parse(savedNick));
         } else {
@@ -38,6 +38,7 @@ function MyPage() {
             setImageView(reader.result);
         }
         reader.readAsDataURL(profileImg);
+        window.location.reload();
     }
     return (
         <div className='myPage_container'>
@@ -66,6 +67,7 @@ function MyPage() {
                             const newNick = prompt();
                             if (newNick != '' && newNick.trim() != '') {
                                 setNickName(newNick);
+                                window.location.reload();
                             } else if (newNick == '' || newNick.trim() == '') {
                                 alert('공백은 사용하실 수 없습니다.');
                             }

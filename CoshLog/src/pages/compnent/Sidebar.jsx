@@ -15,7 +15,7 @@ function Sidebar() {
     const [imageView, setImageView] = useState(null);
 
     useEffect(() => {
-        const savedNick = localStorage.getItem('name');
+        const savedNick = localStorage.getItem('nickka');
         if (savedNick) {
             setNickName(JSON.parse(savedNick));
         }
