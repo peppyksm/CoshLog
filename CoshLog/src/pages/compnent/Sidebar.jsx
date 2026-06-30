@@ -15,15 +15,18 @@ function Sidebar() {
     const [imageView, setImageView] = useState(null);
 
     useEffect(() => {
-        const savedNick = localStorage.getItem('nickName');
-        if (savedNick) {
-            setNickName(JSON.parse(savedNick));
-        }
-        const savedImage = localStorage.getItem('image');
-        if (savedImage) {
-            setImageView(JSON.parse(savedImage));
-        }
-    })
+    const savedNick = localStorage.getItem('nickName');
+
+    if (savedNick && savedNick !== "undefined") {
+        setNickName(JSON.parse(savedNick));
+    }
+
+    const savedImage = localStorage.getItem('image');
+
+    if (savedImage && savedImage !== "undefined") {
+        setImageView(JSON.parse(savedImage));
+    }
+}, []);
 
 
     return (

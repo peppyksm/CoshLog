@@ -13,33 +13,42 @@ function MyPage() {
         }
         // return savedNick ? JSON.parse(savedNick) : '';
     })
-    useEffect(() => {
-        localStorage.setItem('image', JSON.stringify(imageView));
-    })
     const [imageFile, setImageFile] = useState(null);
+
     const [imageView, setImageView] = useState(() => {
         const savedImage = localStorage.getItem('image');
-        if (savedImage != null) {
-            return (JSON.parse(savedImage));
+
+        if (savedImage && savedImage !== "undefined") {
+            return JSON.parse(savedImage);
         }
-        // if (savedImage != '') {
-        //     return (JSON.parse(savedImage))
-        // } else {
-        //     return ('');
-        // }
+
+        return "";
     });
+
+    useEffect(() => {
+        if (imageView !== undefined) {
+            localStorage.setItem('image', JSON.stringify(imageView));
+        }
+    }, [imageView]);
+
     const imageChange = (event) => {
         const profileImg = event.target.files[0];
-        if (profileImg) {
-            setImageFile(profileImg);
-        }
+
+        if (!profileImg) return;
+
+        setImageFile(profileImg);
+
         const reader = new FileReader();
+
         reader.onloadend = () => {
             setImageView(reader.result);
-        }
+        };
+
         reader.readAsDataURL(profileImg);
-        window.location.reload();
-    }
+
+        setTimeout(()=>{window.location.reload();}, 10);
+        
+    };
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
