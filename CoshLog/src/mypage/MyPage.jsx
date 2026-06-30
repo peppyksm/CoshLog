@@ -21,6 +21,8 @@ function MyPage() {
         const savedImage = localStorage.getItem('image');
         if (savedImage != null) {
             return (JSON.parse(savedImage));
+        } else {
+            return (null);
         }
         // if (savedImage != '') {
         //     return (JSON.parse(savedImage))
