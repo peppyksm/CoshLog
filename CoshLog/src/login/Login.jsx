@@ -1,11 +1,14 @@
 import Register from '../register/Register';
 import './Login.css';
 import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 function Login() {
     let navigate = useNavigate();
     return (
         <div className='login_box'>
-            <form className='login_form'>
+            <form className='login_form' onSubmit={(event) => {
+                event.preventDefault();
+            }}>
                 <p id='title' style={{ marginBottom: '3%', marginTop: '3%' }}>로그인</p>
                 <div id='line'></div>
                 <div className='login_inputBox'>
@@ -14,12 +17,20 @@ function Login() {
                         <p>비밀번호</p>
                     </div>
                     <div className='login_inputTextBox'>
-                        <input type='text'></input>
-                        <input type='password'></input>
+                        <input type='text' id='userId'></input>
+                        <input type='password' id='userPw'></input>
                     </div>
                 </div>
                 <div className='login_loginBtnBox'>
                     <button onClick={() => {
+                        if (document.getElementById('userId').value.trim() == '') {
+                            alert('아이디를 입력하세요!');
+                            return;
+                        }
+                        if (document.getElementById('userPw').value.trim() == '') {
+                            alert('비밀번호를 입력하세요!');
+                            return;
+                        }
                         alert('로그인 성공!');
                         navigate('/');
                     }}>로그인</button>
