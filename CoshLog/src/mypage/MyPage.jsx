@@ -1,5 +1,5 @@
 import './MyPage.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 function MyPage() {
     useEffect(() => {
         localStorage.setItem('nickka', JSON.stringify(nickName));
@@ -13,6 +13,33 @@ function MyPage() {
         }
         // return savedNick ? JSON.parse(savedNick) : '';
     })
+    useEffect(() => {
+        localStorage.setItem('image', JSON.stringify(imageView));
+    })
+    const [imageFile, setImageFile] = useState(null);
+    const [imageView, setImageView] = useState(() => {
+        const savedImage = localStorage.getItem('image');
+        if (savedImage != null) {
+            return (JSON.parse(savedImage));
+        }
+        // if (savedImage != '') {
+        //     return (JSON.parse(savedImage))
+        // } else {
+        //     return ('');
+        // }
+    });
+    const imageChange = (event) => {
+        const profileImg = event.target.files[0];
+        if (profileImg) {
+            setImageFile(profileImg);
+        }
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setImageView(reader.result);
+        }
+        reader.readAsDataURL(profileImg);
+        window.location.reload();
+    }
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
@@ -22,9 +49,14 @@ function MyPage() {
                     <h1 className='myPage_text_title'>마이 페이지</h1>
                     <div className='myPage_line'></div>
                     <div className='myPage_profileArea'>
-                        <img className='myPage_img_profile' src='https://i.namu.wiki/i/Du5yyTqmPKcRumUKbwekunAsjxUCmSsc8WWnpbPV93O2ldnXDIIt2KFHrFF9k8DihDbixSusR8yvYKqBUfLHwQ.webp' />
+                        {imageView && (
+                            <img className='myPage_img_profile' src={imageView} />
+                        )}
                         <div className='myPage_profileArea1'>
-                            <button className='myPage_btn_chnImg'>사진 변경</button>
+                            <label for='changeImg'>
+                                <span id='chnIMG'>사진 변경</span>
+                            </label>
+                            <input type='file' id='changeImg' className='myPage_btn_chnImg' accept='image/*' onChange={imageChange}></input>
                             <span>닉네임: <span>{nickName || '없음'}</span></span>
                             <span>현재 레벨: LV.30</span>
                             <span>칭호 : 주니어 모험가</span>
@@ -35,6 +67,7 @@ function MyPage() {
                             const newNick = prompt();
                             if (newNick != '' && newNick.trim() != '') {
                                 setNickName(newNick);
+                                window.location.reload();
                             } else if (newNick == '' || newNick.trim() == '') {
                                 alert('공백은 사용하실 수 없습니다.');
                             }

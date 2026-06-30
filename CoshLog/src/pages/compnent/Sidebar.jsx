@@ -12,11 +12,16 @@ function Sidebar() {
     const [teamOpen, setTeamOpen] = useState(false);
     const [rankOpen, setRankOpen] = useState(false);
     const [nickName, setNickName] = useState('');
+    const [imageView, setImageView] = useState(null);
 
     useEffect(() => {
         const savedNick = localStorage.getItem('nickka');
         if (savedNick) {
             setNickName(JSON.parse(savedNick));
+        }
+        const savedImage = localStorage.getItem('image');
+        if (savedImage) {
+            setImageView(JSON.parse(savedImage));
         }
     })
 
@@ -38,7 +43,7 @@ function Sidebar() {
 
                 <div className="profileCard" onClick={() => { navigate("/mypage") }}>
                     <div className="userInfo">
-                        <img src={profileImg} id="photo" alt="profile" />
+                        <img src={imageView} id="photo" alt="profile" />
 
                         <div className="infoText">
                             <h3>{nickName || '게스트'}</h3>
