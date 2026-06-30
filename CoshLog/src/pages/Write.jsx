@@ -8,7 +8,7 @@ function Write() {
 
     const [writeCtg, setWriteCtg] = useState("fe");
     const [ctg2, setCtg2] = useState("html");
-    const [ctg3, setCtg3] = useState("normal");
+    const [ctg3, setCtg3] = useState("일반");
 
     const [title, setTitle] = useState("");
     const [code, setCode] = useState("");
@@ -24,8 +24,10 @@ function Write() {
 
         if (value === "fe") {
             setCtg2("html");
-        } else {
+        } else if (value == "be"){
             setCtg2("java");
+        } else{
+            setCtg2("recruitment")
         }
     };
 
@@ -52,7 +54,8 @@ function Write() {
 
         alert("게시 되었습니다 ( + 10Exp 획득! )");
 
-        navigate(`/forum/${writeCtg}/${ctg2}`);
+        // navigate(`/forum/${writeCtg}/${ctg2}`);
+        navigate(`/viewpost/${post.id}`);
     };
 
     return (
@@ -92,8 +95,7 @@ function Write() {
 
                         ) :
                             (< select name="ctg2" id="ctg2" value={ctg2} onChange={(event) => setCtg2(event.target.value)}>
-                                <option value="recruitment">팀원 구인</option>
-                                <option value="recruitment">팀원 모집</option>
+                                <option value="recruitment">팀원 모집/팀 찾기</option>
                             </select>
                             )
 
@@ -101,9 +103,9 @@ function Write() {
                 {
                     writeCtg != "team" && (
                         <select name="ctg3" id="ctg3" value={ctg3} onChange={(event) => setCtg3(event.target.value)} >
-                            <option value="normal">일반</option>
-                            <option value="question">질문</option>
-                            <option value="info">정보</option>
+                            <option value="일반">일반</option>
+                            <option value="질문">질문</option>
+                            <option value="정보">정보</option>
                         </select>
                     )
                 }

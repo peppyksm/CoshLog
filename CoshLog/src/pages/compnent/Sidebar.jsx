@@ -58,10 +58,16 @@ function Sidebar() {
                     <p id="targetText">오늘의 목표치 3/10</p>
                 </div>
 
-                <input
-                    id="searchAll"
-                    type="text"
-                    placeholder="Search all posts"
+                <input id="searchAll" type="text" placeholder="Search all posts (input title)" onKeyDown={(e) => 
+                {
+                        if (e.key === "Enter") {
+                            const searchValue = e.target.value;
+
+                            localStorage.setItem("search", JSON.stringify(searchValue));
+
+                            navigate("/search");
+                        }
+                    }}
                 />
             </div>
 

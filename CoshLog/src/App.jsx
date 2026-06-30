@@ -21,7 +21,7 @@ import TeamRecruitment from './pages/TeamRecruitment';
 import TeamPrivate from './pages/TeamPrivate';
 import ViewPost from './pages/ViewPost';
 import { AnimatePresence, motion } from "motion/react";
-
+import Search from './pages/Search';
 
 
 function App() {
@@ -47,6 +47,8 @@ function App() {
           <Route path="/team/private" element={<Page><TeamPrivate /></Page>} />
           <Route path="/rank/level" element={<Page><Ranking /></Page>} />
           <Route path="/viewpost/:id" element={<Page><ViewPost /></Page>} />
+          <Route path="/search" element={<Page><Search /></Page>} />
+          
         </Route>
 
         <Route path="/login" element={<Page><Login /></Page>} />
