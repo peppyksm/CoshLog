@@ -10,6 +10,7 @@ function Post({ ctg1, ctg2 }) {
     const ctgPosts = posts.filter((post) => {
         return post.ctg1 == ctg1 && post.ctg2 == ctg2;
     })
+    const nickname = JSON.parse(localStorage.getItem("nickka"));
 
     return (
 
@@ -18,10 +19,17 @@ function Post({ ctg1, ctg2 }) {
                 ctgPosts.map((post) => (
                     <div className="postItem" key={post.id}>
                         <span style={{ marginLeft: "26%" }}>{post.ctg3}</span>
-                        <span style={{cursor : "pointer"}} onClick={() => {
-                            navigate(`/viewpost/${post.id}`);
+                        <span style={{ cursor: "pointer" }} onClick={() => {
+
+                            if(post.nickName == nickname || post.isPrivate == false){
+                                navigate(`/viewpost/${post.id}`);
+                            }else {
+                                alert("비공개 글입니다.")
+                            }
+
                         }}>{post.title || "제목 없음"}</span>
-                        <span>{post.nickName}</span>
+                        {post.nickName == null ? (<span>게스트</span>) : (<span>{post.nickName}</span>)}
+
                         <span>
                             {post.time ? new Date(post.time).toLocaleDateString() : ""}
                         </span>
