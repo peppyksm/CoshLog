@@ -33,8 +33,24 @@
     width:53px;
     border: solid 4px black;
     cursor: pointer;
-    margin-left: 60%;
+    margin-left: 57%;
     border-radius: 4px;
     background-color: black;
     color: white;
+}
+
+.postItem {
+    display: grid;
+    grid-template-columns: 10.3% 1fr 11.5% 15.5%;
+    align-items: center;
+    height: 25px;
+}
+
+.postItem span {
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.postHide{
+    display: none;
 }

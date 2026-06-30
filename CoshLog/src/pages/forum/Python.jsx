@@ -2,6 +2,8 @@ import HeaderNav from "../compnent/HeaderNav";
 import ForumPostList from "../compnent/ForumPostList";
 import "../compnent/HeaderNav.css";
 import "../compnent/PostList.css";
+import Post from "../compnent/Post";
+
 
 
 
@@ -14,6 +16,7 @@ function Python() {
             </div>
             {HeaderNav()}
             {ForumPostList()}
+            <Post ctg1 = "be" ctg2 = "python"/>
         </div>
     )
 }
