@@ -1,17 +1,24 @@
 import HeaderNav from "./compnent/HeaderNav";
 import "./View.css";
 import { useNavigate } from "react-router";
+import { useParams } from "react-router";
 
 
 
 function ViewPost() {
 
     let navigate = useNavigate();
+    const { id } = useParams();
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    const post = posts.find((item)=>{
+        return String(item.id) == String(id);
+    })
+
 
     return (
         <div className="forumPage">
             <div className="header">
-                <h1>게시판 이름 ctg1, ctg2, ctg3</h1>
+                <h1>{(post.ctg1).toUpperCase()} / {(post.ctg2).toUpperCase()}</h1>
             </div>
             {HeaderNav()}
 
@@ -19,9 +26,9 @@ function ViewPost() {
 
                 <hr /><br />
                 <div>
-                    <div className="viewTitle">제목이 들어갈 곳</div>
+                    <div className="viewTitle">{post.title}</div>
                     <div className="viewInfo">
-                        <div><span>닉네임</span> | <span>2026.06.28</span></div>
+                        <div><span>{post.nickName}</span> | <span>2026.06.28</span></div>
                         <div><span>조회수 0</span> | <span>추천 0 </span> | 댓글 0</div>
                     </div>
                 </div>
@@ -32,10 +39,10 @@ function ViewPost() {
 
                 <div className="viewContainer">
                     <div className="viewCode">
-                        코드내용이 들어갈 곳
+                        {post.code}
                     </div>
                     <div className="viewMemo">
-                        메모내용이 들어갈 곳
+                        {post.memo}
                     </div>
                 </div>
 

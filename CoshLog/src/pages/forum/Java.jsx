@@ -3,6 +3,8 @@ import HeaderNav from "../compnent/HeaderNav";
 import ForumPostList from "../compnent/ForumPostList";
 import "../compnent/HeaderNav.css";
 import "../compnent/PostList.css";
+import Post from "../compnent/Post";
+
 
 
 
@@ -15,6 +17,7 @@ function Java() {
             </div>
             {HeaderNav()}
             {ForumPostList()}
+            <Post ctg1 = "be" ctg2 = "java"/>
         </div>
     )
 }

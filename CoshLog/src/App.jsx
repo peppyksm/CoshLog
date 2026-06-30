@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router'
+import { Routes, Route, useLocation } from 'react-router'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import './App.css'
@@ -20,36 +20,55 @@ import Write from './pages/Write';
 import TeamRecruitment from './pages/TeamRecruitment';
 import TeamPrivate from './pages/TeamPrivate';
 import ViewPost from './pages/ViewPost';
+import { AnimatePresence, motion } from "motion/react";
+
 
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/forum/fe/html" element={<Html />} />
-        <Route path="/forum/fe/css" element={<Css />} />
-        <Route path="/forum/fe/javascript" element={<JavaScript />} />
-        <Route path="/forum/fe/react" element={<React />} />
-        <Route path="/forum/be/java" element={<Java />} />
-        <Route path="/forum/be/node" element={<Node />} />
-        <Route path="/forum/be/python" element={<Python />} />
-        <Route path="/forum/be/go" element={<Go />} />
-        <Route path='/forum/write' element={<Write />} />
-        <Route path="/game/blankgame" element={<Quiz />} />
-        <Route path="/team/recruitment" element={<TeamRecruitment />} />
-        <Route path="/team/private" element={<TeamPrivate />} />
-        <Route path="/rank/level" element={<Ranking />} />
-        <Route path="/viewpost" element={<ViewPost />} />
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Page><Home /></Page>} />
+          <Route path="/mypage" element={<Page><MyPage /></Page>} />
+          <Route path="/forum/fe/html" element={<Page><Html /></Page>} />
+          <Route path="/forum/fe/css" element={<Page><Css /></Page>} />
+          <Route path="/forum/fe/javascript" element={<Page><JavaScript /></Page>} />
+          <Route path="/forum/fe/react" element={<Page><React /></Page>} />
+          <Route path="/forum/be/java" element={<Page><Java /></Page>} />
+          <Route path="/forum/be/node" element={<Page><Node /></Page>} />
+          <Route path="/forum/be/python" element={<Page><Python /></Page>} />
+          <Route path="/forum/be/go" element={<Page><Go /></Page>} />
+          <Route path="/forum/write" element={<Page><Write /></Page>} />
+          <Route path="/game/blankgame" element={<Page><Quiz /></Page>} />
+          <Route path="/team/recruitment" element={<Page><TeamRecruitment /></Page>} />
+          <Route path="/team/private" element={<Page><TeamPrivate /></Page>} />
+          <Route path="/rank/level" element={<Page><Ranking /></Page>} />
+          <Route path="/viewpost/:id" element={<Page><ViewPost /></Page>} />
+        </Route>
 
-      </Route>
-
-      <Route path="/*" element={<Error />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
+        <Route path="/login" element={<Page><Login /></Page>} />
+        <Route path="/register" element={<Page><Register /></Page>} />
+        <Route path="/*" element={<Page><Error /></Page>} />
+      </Routes>
+    </AnimatePresence>
   )
 }
+
+function Page({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.25 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 
 export default App
