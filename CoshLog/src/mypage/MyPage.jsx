@@ -2,10 +2,10 @@ import './MyPage.css';
 import React, { useState, useEffect } from 'react';
 function MyPage() {
     useEffect(() => {
-        localStorage.setItem('nickka', JSON.stringify(nickName));
+        localStorage.setItem('nickName', JSON.stringify(nickName));
     });
     const [nickName, setNickName] = useState(() => {
-        const savedNick = localStorage.getItem('nickka');
+        const savedNick = localStorage.getItem('nickName');
         if (savedNick != '') {
             return (JSON.parse(savedNick));
         } else {
@@ -53,15 +53,12 @@ function MyPage() {
                             <img className='myPage_img_profile' src={imageView} />
                         )}
                         <div className='myPage_profileArea1'>
-                            <label for='changeImg'>
+                            <label htmlFor='changeImg'>
                                 <span id='chnIMG'>사진 변경</span>
                             </label>
                             <input type='file' id='changeImg' className='myPage_btn_chnImg' accept='image/*' onChange={imageChange}></input>
                             <span>닉네임: <span>{nickName || '없음'}</span></span>
-                            <span>현재 레벨: LV.30</span>
-                            <span>칭호 : 주니어 모험가</span>
-                            <span>골드비치 현피 전적 0승 1패</span>
-                            <span>보유 스킬 : 달팽이 던지기</span>
+                            <span>현재 레벨: LV.300</span>
                         </div>
                         <button className='myPage_btn_chnNick' onClick={() => {
                             const newNick = prompt();
@@ -77,24 +74,24 @@ function MyPage() {
                     <div className='myPage_badgeArea'>
                         <h3 className='myPage_text_main'>보유 뱃지</h3>
                         <div className='myPage_badgeImgArea'>
-                            <img className='myPage_img_badge' src='https://static.wikia.nocookie.net/maplestorym/images/4/45/%EB%AA%AC%EC%8A%A4%ED%84%B0_%EB%A7%88%EB%85%B8.png/revision/latest/thumbnail/width/360/height/450?cb=20180201154835&path-prefix=ko' />
-                            <img className='myPage_img_badge' src='https://i.namu.wiki/i/C-9ZpgUm8WmFFs0i-h2SJKWjkErdXTWgEcJSI3NQGCx5LSOXwkxSvxImOwe4lkHnqHJUT0K_TuZyaMRTBJDZyQ.webp' />
-                            <img className='myPage_img_badge' src='https://i.namu.wiki/i/saCN7RitpGX_i9kdIAWLfwYg_XCXW8piTqn4Vw8YOF_d3Fh3EUzU81gOXPiVVJSf5y08cj_zHKfhoVJjuoAmqw.webp' />
-                            <img className='myPage_img_badge' src='https://cdn.gamemeca.com/trees/0001/399/026/gm716075_cm_171015_ktj_300.jpg' />
+                            <img className='myPage_img_badge' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeSfQ4x3I6CTEt5PzhNWeng4BUsrCg2OBE2OARMBcnvg&s=10' />
+                            <img className='myPage_img_badge' src='https://cdn-icons-png.flaticon.com/512/4209/4209019.png' />
+                            <img className='myPage_img_badge' src='https://img.icons8.com/color/1200/warranty.jpg' />
+                            <img className='myPage_img_badge' src='https://cdn-icons-png.flaticon.com/512/771/771273.png' />
                         </div>
                     </div>
                     <div className='myPage_line1'></div>
                     <div className='myPage_dailyArea'>
-                        <div className='myPage_dailyArea1'>
-                            <h3 className='myPage_text_mainDaily'>매일 목표 설정</h3>
-                            <span className='myPage_text_daily1'>일일 퀴즈 풀기</span>
+                        <h3 className='myPage_text_mainDaily'>매일 목표 설정</h3>
+                        <div>
                             <span className='myPage_text_daily2'>질문 글 작성</span>
-                        </div>
-                        <div className='myPage_dailyArea2'>
                             <span className='myPage_text_daily'><input className='myPage_inputText_daily1' type='text'></input>회</span>
+                        </div>
+                        <div>
+                            <span className='myPage_text_daily1'>정보 글 작성</span>
                             <span className='myPage_text_daily'><input className='myPage_inputText_daily2' type='text'></input>회</span>
                         </div>
-                        <div className='myPage_dailyArea3'>
+                        <div>
                             <button className='myPage_btn_daily' onClick={() => {
                                 alert('목표가 저장되었습니다.');
                             }}>목표 저장</button>
