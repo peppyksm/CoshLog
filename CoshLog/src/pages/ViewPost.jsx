@@ -36,7 +36,7 @@ function ViewPost() {
     return (
         <div className="forumPage">
             <div className="header">
-                <h1>{(post.ctg1).toUpperCase()} / {(post.ctg2).toUpperCase()}</h1>
+                <h1>{(post.ctg1).toUpperCase()} / {post.ctg2}</h1>
             </div>
             {HeaderNav()}
 
