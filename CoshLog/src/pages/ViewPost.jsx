@@ -47,22 +47,30 @@ function ViewPost() {
                     <div className="viewTitle">{post.title}</div>
                     <div className="viewInfo">
                         <div><span>{post.nickName}</span> | <span>2026.06.28</span></div>
-                        <div><span>조회수 0</span> | <span>추천 0 </span> | 댓글 0</div>
+                        <div><span>조회수 {post.viewPoint}</span> | <span>추천 0 </span> | 댓글 0</div>
                     </div>
                 </div>
                 <br /><hr /><br />
 
 
 
-
-                <div className="viewContainer">
-                    <div className="viewCode">
-                        {post.code}
-                    </div>
-                    <div className="viewMemo">
-                        {post.memo}
-                    </div>
-                </div>
+                {
+                    ((post.ctg1 == "fe") || (post.ctg1 == "be")) ?
+                        (
+                            <div className="viewContainer">
+                                <div className="viewCode">
+                                    {post.code}
+                                </div>
+                                <div className="viewMemo">
+                                    {post.memo}
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="teamMemo">
+                                {post.memo}
+                            </div>
+                        )
+                }
 
                 <div className="viewBtnContainer">
                     <button onClick={() => {
