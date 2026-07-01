@@ -48,7 +48,9 @@ function Write() {
             memo: memo,
             isPrivate: isPrivate,
             time: new Date().toISOString(),
-            nickName: nickName
+            nickName: nickName,
+            viewPoint : 0,
+            likeCount : 0
         };
 
         posts.unshift(post);
