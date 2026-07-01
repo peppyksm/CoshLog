@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { useEffect, useState } from "react";
 
 
 
@@ -6,11 +7,27 @@ import { useNavigate } from "react-router";
 function Post({ ctg1, ctg2 }) {
 
     let navigate = useNavigate();
+    const [postType, setPostType] = useState("all");
     const posts = JSON.parse(localStorage.getItem("posts")) || [];
     const ctgPosts = posts.filter((post) => {
-        return post.ctg1 == ctg1 && post.ctg2 == ctg2;
+        const sameBoard = post.ctg1 == ctg1 && post.ctg2 == ctg2;
+        const sameType = ctg1 == "team" ? post.ctg2 == postType : post.ctg3 == postType;
+
+        return sameBoard && (postType == "all" || sameType);
     })
     const nickname = JSON.parse(localStorage.getItem("nickka"));
+
+    useEffect(() => {
+        const handlePostTypeChange = (event) => {
+            setPostType(event.detail);
+        }
+
+        window.addEventListener("postTypeChange", handlePostTypeChange);
+
+        return () => {
+            window.removeEventListener("postTypeChange", handlePostTypeChange);
+        }
+    }, [])
 
     return (
 
@@ -18,7 +35,7 @@ function Post({ ctg1, ctg2 }) {
             {
                 ctgPosts.map((post) => (
                     <div className="postItem" key={post.id}>
-                        <span style={{ marginLeft: "26%" }}>{post.ctg3}</span>
+                        <span style={{ marginLeft: "26%" }}>{post.ctg1 == "team" ? post.ctg2 : post.ctg3}</span>
                         <span style={{ cursor: "pointer" }} onClick={() => {
 
                             if (post.nickName == nickname || post.isPrivate == false) {

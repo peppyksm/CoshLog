@@ -5,13 +5,16 @@ import { useNavigate } from "react-router";
 function ForumPostList() {
 
     let navigate = useNavigate();
+    const changePostType = (postType) => {
+        window.dispatchEvent(new CustomEvent("postTypeChange", { detail: postType }));
+    }
 
     return (
         <div className="postList">
-            <input type="radio" name="postSelect" id="all" defaultChecked />
-            <input type="radio" name="postSelect" id="general" />
-            <input type="radio" name="postSelect" id="info" />
-            <input type="radio" name="postSelect" id="qna" />
+            <input type="radio" name="postSelect" id="all" defaultChecked onChange={() => { changePostType("all") }} />
+            <input type="radio" name="postSelect" id="general" onChange={() => { changePostType("일반") }} />
+            <input type="radio" name="postSelect" id="info" onChange={() => { changePostType("정보") }} />
+            <input type="radio" name="postSelect" id="qna" onChange={() => { changePostType("질문") }} />
 
 
 
