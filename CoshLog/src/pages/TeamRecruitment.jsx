@@ -1,5 +1,5 @@
 import HeaderNav from "./compnent/HeaderNav";
-import TeamPostList from "./compnent/TeamPostList";
+import TeamPostList from "./TeamPostList";
 import Post from "./compnent/Post";
 
 function TeamRecruitment(){

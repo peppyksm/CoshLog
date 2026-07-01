@@ -1,9 +1,54 @@
 import Register from '../register/Register';
 import './Login.css';
 import { useNavigate } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 function Login() {
     let navigate = useNavigate();
+    let userID = '';
+    let userPW = '';
+    let wow = 0;
+    const [logSt, setLogSt] = useState('false');
+    const userList = JSON.parse(localStorage.getItem('user'));
+    useEffect(() => {
+        // setUserID(JSON.parse(localStorage.getItem('user')));
+        // setUserPW(JSON.parse(localStorage.getItem('pw')));
+        localStorage.setItem('loginState', JSON.stringify(logSt));
+    });
+    const userIDCheck = () => {
+        if (document.getElementById('userId').value.trim() == '') {
+            alert('아이디를 입력하세요!');
+            return;
+        }
+        for (let i = 0; i < userList.length; i++) {
+            if (document.getElementById('userId').value.trim() == userList[i].id) {
+                userID = userList[i].id;
+                wow = i;
+                break;
+            }
+        }
+        if (userID != document.getElementById('userId').value.trim()) {
+            alert('존재하지 않는 아이디입니다.');
+            return;
+        }
+        if (document.getElementById('userPw').value.trim() == '') {
+            alert('비밀번호를 입력하세요!');
+            return;
+        }
+        for (let i = 0; i < userList.length; i++) {
+            if (document.getElementById('userPw').value.trim() == userList[i].pw && userList[wow].pw == userList[i].pw) {
+                userPW = userList[i].pw;
+                break;
+            }
+        }
+        if (userPW != document.getElementById('userPw').value.trim()) {
+            alert('비밀번호를 잘못 입력하셨습니다.');
+            return;
+        }
+        alert('로그인 성공!');
+        setLogSt('true');
+        localStorage.setItem('index', wow);
+        navigate('/');
+    }
     return (
         <div className='login_box'>
             <form className='login_form' onSubmit={(event) => {
@@ -23,16 +68,7 @@ function Login() {
                 </div>
                 <div className='login_loginBtnBox'>
                     <button onClick={() => {
-                        if (document.getElementById('userId').value.trim() == '') {
-                            alert('아이디를 입력하세요!');
-                            return;
-                        }
-                        if (document.getElementById('userPw').value.trim() == '') {
-                            alert('비밀번호를 입력하세요!');
-                            return;
-                        }
-                        alert('로그인 성공!');
-                        navigate('/');
+                        userIDCheck();
                     }}>로그인</button>
                 </div>
                 <div id='or'>

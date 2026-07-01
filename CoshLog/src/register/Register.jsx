@@ -4,13 +4,26 @@ import { useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 function Register() {
     let navigate = useNavigate();
-    useEffect(() => {
-        localStorage.setItem('name', document.getElementById('userName').value);
-        localStorage.setItem('nickName', document.getElementById('userNickName').value);
-        localStorage.setItem('email', document.getElementById('userEmail').value);
-        localStorage.setItem('id', document.getElementById('userId').value);
-        localStorage.setItem('pw', document.getElementById('userPw').value);
-    });
+    const userDataSet = () => {
+        const userDatas = JSON.parse(localStorage.getItem('user')) || [];
+        const userData = {
+            name: document.getElementById('userName').value,
+            nickName: document.getElementById('userNickName').value,
+            email: document.getElementById('userEmail').value,
+            id: document.getElementById('userId').value,
+            pw: document.getElementById('userPw').value,
+            isTeamAvailable: false,
+            image: '',
+            dailyQuest: 0,
+            dailyQuestDo: 0,
+            level: 1
+        }
+        userDatas.push(userData);
+        localStorage.setItem('user', JSON.stringify(userDatas));
+        alert('가입이 완료되었습니다.');
+        navigate('/');
+    }
+
     return (
         <div className='register_box'>
             <form className='register_form' onSubmit={(event) => {
@@ -76,8 +89,7 @@ function Register() {
                             alert('개인정보 처리방침에 동의해주세요!');
                             return;
                         }
-                        alert('가입이 완료되었습니다.');
-                        navigate('/');
+                        userDataSet();
                     }}>가 입 하 기</button>
                 </div>
             </form >

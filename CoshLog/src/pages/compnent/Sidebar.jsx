@@ -11,20 +11,37 @@ function Sidebar() {
     const [gameOpen, setGameOpen] = useState(false);
     const [teamOpen, setTeamOpen] = useState(false);
     const [rankOpen, setRankOpen] = useState(false);
-    const [nickName, setNickName] = useState('');
     const [imageView, setImageView] = useState(null);
-
+    const [logSt, setLogSt] = useState('로그인');
+    const [nickName, setNickName] = useState('');
+    const [level, setLevel] = useState(0);
+    const [dailyQuest, setDailyQuest] = useState(0);
     useEffect(() => {
-        const savedNick = localStorage.getItem('nickName');
-        if (savedNick) {
-            setNickName(JSON.parse(savedNick));
+        const userList = JSON.parse(localStorage.getItem('user'));
+        const index = JSON.parse(localStorage.getItem('index'));
+        const savedLogSt = JSON.parse(localStorage.getItem('loginState'));
+        if (userList && index != null && userList[index]) {
+            const savedNick = userList[index].nickName;
+            if (savedNick) {
+                setNickName(savedNick);
+            } else {
+                setNickName('');
+            }
+            const savedImage = userList[index].image;
+            if (savedImage) {
+                setImageView(savedImage);
+            } else {
+                setImageView(null);
+            }
+            setLevel(userList[index].level);
+            setDailyQuest(userList[index].dailyQuest);
         }
-        const savedImage = localStorage.getItem('image');
-        if (savedImage) {
-            setImageView(JSON.parse(savedImage));
+        if (savedLogSt == 'true') {
+            setLogSt('로그아웃');
+        } else if (savedLogSt == 'false') {
+            setLogSt('로그인');
         }
-    })
-
+    }, [])
 
     return (
         <aside className="sidebar dark">
@@ -38,7 +55,7 @@ function Sidebar() {
                         navigate("/login")
                     }}
                 >
-                    <h2>로그인</h2>
+                    <h2>{logSt}</h2>
                 </div>
 
                 <div className="profileCard" onClick={() => { navigate("/mypage") }}>
@@ -47,7 +64,7 @@ function Sidebar() {
 
                         <div className="infoText">
                             <h3>{nickName || '게스트'}</h3>
-                            <h4>Lv.300</h4>
+                            <h4>Lv.{level}</h4>
                         </div>
                     </div>
 
@@ -55,7 +72,7 @@ function Sidebar() {
                         <div className="achievement"></div>
                     </div>
 
-                    <p id="targetText">오늘의 목표치 3/10</p>
+                    <p id="targetText">오늘의 목표치 3/{dailyQuest}</p>
                 </div>
 
                 <input

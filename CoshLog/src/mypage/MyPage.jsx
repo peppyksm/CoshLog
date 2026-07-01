@@ -1,34 +1,25 @@
 import './MyPage.css';
 import React, { useState, useEffect } from 'react';
 function MyPage() {
-    useEffect(() => {
-        localStorage.setItem('nickName', JSON.stringify(nickName));
-    });
+    const userList = JSON.parse(localStorage.getItem('user'));
+    const index = JSON.parse(localStorage.getItem('index'));
     const [nickName, setNickName] = useState(() => {
-        const savedNick = localStorage.getItem('nickName');
+        const savedNick = userList[index].nickName;
         if (savedNick != '') {
-            return (JSON.parse(savedNick));
+            return savedNick;
         } else {
             return ('');
         }
-        // return savedNick ? JSON.parse(savedNick) : '';
-    })
-    useEffect(() => {
-        localStorage.setItem('image', JSON.stringify(imageView));
+        return savedNick ? savedNick : '';
     })
     const [imageFile, setImageFile] = useState(null);
     const [imageView, setImageView] = useState(() => {
-        const savedImage = localStorage.getItem('image');
+        const savedImage = userList[index].image;
         if (savedImage != null) {
-            return (JSON.parse(savedImage));
+            return savedImage;
         } else {
-            return (null);
+            return null;
         }
-        // if (savedImage != '') {
-        //     return (JSON.parse(savedImage))
-        // } else {
-        //     return ('');
-        // }
     });
     const imageChange = (event) => {
         const profileImg = event.target.files[0];
@@ -37,11 +28,14 @@ function MyPage() {
         }
         const reader = new FileReader();
         reader.onloadend = () => {
+            userList[index].image = reader.result.trim();
+            localStorage.setItem('user', JSON.stringify(userList));
             setImageView(reader.result);
         }
         reader.readAsDataURL(profileImg);
         window.location.reload();
     }
+    const userLevel = userList[index].level;
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
@@ -60,15 +54,22 @@ function MyPage() {
                             </label>
                             <input type='file' id='changeImg' className='myPage_btn_chnImg' accept='image/*' onChange={imageChange}></input>
                             <span>닉네임: <span>{nickName || '없음'}</span></span>
-                            <span>현재 레벨: LV.300</span>
+                            <span>현재 레벨 : Lv. {userLevel}</span>
                         </div>
                         <button className='myPage_btn_chnNick' onClick={() => {
-                            const newNick = prompt();
-                            if (newNick != '' && newNick.trim() != '') {
-                                setNickName(newNick);
-                                window.location.reload();
-                            } else if (newNick == '' || newNick.trim() == '') {
+                            const newNick = prompt('변경할 닉네임을 입력해주세요.');
+                            if (!newNick || newNick.trim() === '') {
                                 alert('공백은 사용하실 수 없습니다.');
+                                return;
+                            }
+                            if (userList && userList[index] !== undefined) {
+                                userList[index].nickName = newNick.trim();
+                                localStorage.setItem('user', JSON.stringify(userList));
+                                setNickName(newNick.trim());
+                                alert('닉네임이 성공적으로 변경되었습니다.');
+                                window.location.reload();
+                            } else {
+                                alert('유저 정보를 찾을 수 없습니다.');
                             }
                         }}>닉네임 변경</button>
                     </div>
@@ -95,7 +96,17 @@ function MyPage() {
                         </div>
                         <div>
                             <button className='myPage_btn_daily' onClick={() => {
-                                alert('목표가 저장되었습니다.');
+                                let q1 = document.getElementsByClassName('myPage_inputText_daily1')[0].value.trim();
+                                let q2 = document.getElementsByClassName('myPage_inputText_daily2')[0].value.trim();
+                                if (q1 < 0 || q2 < 0) {
+                                    alert('음수는 입력 불가');
+                                    return;
+                                } else {
+                                    let qSum = Number(q1) + Number(q2);
+                                    userList[index].dailyQuest = qSum;
+                                    localStorage.setItem('user', JSON.stringify(userList));
+                                    alert('목표가 저장되었습니다.');
+                                }
                             }}>목표 저장</button>
                         </div>
                     </div>
@@ -105,6 +116,8 @@ function MyPage() {
                         <span className='myPage_text_chnPW1'>새 비밀번호</span>
                         <input className='myPage_inputText_chnPW' type='password'></input>
                         <button className='myPage_btn_chnPW' onClick={() => {
+                            userList[index].pw = document.getElementsByClassName('myPage_inputText_chnPW')[0].value.trim();
+                            localStorage.setItem('user', JSON.stringify(userList));
                             alert('비밀번호가 수정되었습니다.');
                         }}>비밀번호 수정</button>
                     </div>
