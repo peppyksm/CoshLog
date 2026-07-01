@@ -29,7 +29,7 @@ function Write() {
         } else if (value == "be") {
             setCtg2("java");
         } else {
-            setCtg2("recruitment")
+            setCtg2("팀원 모집")
         }
     };
 
@@ -100,7 +100,8 @@ function Write() {
 
                         ) :
                             (< select name="ctg2" id="ctg2" value={ctg2} onChange={(event) => setCtg2(event.target.value)}>
-                                <option value="recruitment">팀원 모집/팀 찾기</option>
+                                <option value="팀원 모집">팀원 모집</option>
+                                <option value="팀 찾기">팀 찾기</option>
                             </select>
                             )
 

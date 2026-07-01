@@ -2,6 +2,7 @@ import HeaderNav from "./compnent/HeaderNav";
 import TeamPostList from "./TeamPostList";
 import Post from "./compnent/Post";
 
+
 function TeamRecruitment(){
     return(
         <div className="teamPage">
@@ -11,7 +12,8 @@ function TeamRecruitment(){
             {HeaderNav()}
             {TeamPostList()}
 
-            <Post ctg1 = "team" ctg2 = "recruitment"/>
+            <Post ctg1 = "team" ctg2 = "팀원 모집"/>
+            <Post ctg1 = "team" ctg2 = "팀 찾기"/>
         </div>
     )
 }
