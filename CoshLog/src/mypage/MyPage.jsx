@@ -42,13 +42,12 @@ function MyPage() {
             userList[index].image = reader.result.trim();
             localStorage.setItem('user', JSON.stringify(userList));
             setImageView(reader.result);
+            setTimeout(() => { window.location.reload(); }, 10);
         };
 
         reader.readAsDataURL(profileImg);
     }
     const userLevel = userList[index].level;
-
-    setTimeout(() => { window.location.reload(); }, 10);
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
