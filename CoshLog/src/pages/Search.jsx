@@ -6,11 +6,11 @@ function Search() {
 
     let navigate = useNavigate();
     const posts = JSON.parse(localStorage.getItem("posts")) || [];
-    const searchValue = JSON.parse(localStorage.getItem("search"));
+    const searchValue = JSON.parse(localStorage.getItem("search")) || "";
 
     const searchPosts = posts.filter((post) => {
-    return post.title.includes(searchValue);
-});
+        return (post.title || "").includes(searchValue);
+    });
 
     return (
 
@@ -20,7 +20,7 @@ function Search() {
                 <h1>검색 </h1>
             </div>
             {HeaderNav()}
-            <p style={{margin : "3%"}}>'{searchValue}' 의 검색결과</p>
+            <p style={{ margin: "3%" }}>'{searchValue}' 의 검색결과</p>
             <div style={{ color: "gray" }}><span style={{ marginLeft: "3%" }}>카테고리</span><span style={{ marginLeft: "3%" }}>제목</span><span style={{ marginLeft: "60%" }}>작성자</span><span style={{ marginLeft: "10%" }}>날짜</span></div><hr />
             <div>
                 {
