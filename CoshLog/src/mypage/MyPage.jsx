@@ -13,6 +13,7 @@ function MyPage() {
         return savedNick ? savedNick : '';
     })
     const [imageFile, setImageFile] = useState(null);
+
     const [imageView, setImageView] = useState(() => {
         const savedImage = userList[index].image;
         if (savedImage != null) {
@@ -21,21 +22,33 @@ function MyPage() {
             return null;
         }
     });
+
+    useEffect(() => {
+        if (imageView !== undefined) {
+            localStorage.setItem('image', JSON.stringify(imageView));
+        }
+    }, [imageView]);
+
     const imageChange = (event) => {
         const profileImg = event.target.files[0];
-        if (profileImg) {
-            setImageFile(profileImg);
-        }
+
+        if (!profileImg) return;
+
+        setImageFile(profileImg);
+
         const reader = new FileReader();
+
         reader.onloadend = () => {
             userList[index].image = reader.result.trim();
             localStorage.setItem('user', JSON.stringify(userList));
             setImageView(reader.result);
-        }
+        };
+
         reader.readAsDataURL(profileImg);
-        window.location.reload();
     }
     const userLevel = userList[index].level;
+
+    setTimeout(() => { window.location.reload(); }, 10);
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
@@ -126,4 +139,5 @@ function MyPage() {
         </div >
     );
 }
+
 export default MyPage;

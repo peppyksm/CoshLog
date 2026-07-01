@@ -11,7 +11,7 @@ function TeamRecruitment(){
             {HeaderNav()}
             {TeamPostList()}
 
-            <Post ctg1 = "team" ctg2 = "findPeople"/>
+            <Post ctg1 = "team" ctg2 = "recruitment"/>
         </div>
     )
 }

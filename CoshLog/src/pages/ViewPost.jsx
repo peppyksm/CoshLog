@@ -10,15 +10,33 @@ function ViewPost() {
     let navigate = useNavigate();
     const { id } = useParams();
     const posts = JSON.parse(localStorage.getItem("posts")) || [];
-    const post = posts.find((item)=>{
+    const post = posts.find((item) => {
         return String(item.id) == String(id);
     })
+
+    // const handleDelete = () =>{
+    //     const newPosts = posts.filter((post) => post.id !== Number(id));
+
+    //     localStorage.setItem("posts", JSON.stringify(newPosts));
+    //     navigate("/"); 
+    // }
+    const handleDelete = () => {
+        const newPosts = posts.filter((post) => {
+            return String(post.id) !== String(id);
+        });
+
+        localStorage.setItem("posts", JSON.stringify(newPosts));
+
+        alert('삭제되었습니다. 홈으로 이동합니다.')
+        navigate("/");
+        window.location.reload();
+    };
 
 
     return (
         <div className="forumPage">
             <div className="header">
-                <h1>{(post.ctg1).toUpperCase()} / {(post.ctg2).toUpperCase()}</h1>
+                <h1>{(post.ctg1).toUpperCase()} / {post.ctg2}</h1>
             </div>
             {HeaderNav()}
 
@@ -47,21 +65,19 @@ function ViewPost() {
                 </div>
 
                 <div className="viewBtnContainer">
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         let isEdit = confirm("수정하러 가시겠습니까?")
-                        if(isEdit == true){
-                            
+                        if (isEdit == true) {
+
                             //수정창 가기
                         }
 
                     }}>수정</button>
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         let isDelete = confirm("정말로 삭제하시겠습니까?")
-                        if(isDelete == true){
+                        if (isDelete == true) {
 
-                            //객체배열 삭제 로직 넣기
-
-                            navigate("/"); 
+                            handleDelete();
                         }
                     }}>삭제</button>
                 </div>
