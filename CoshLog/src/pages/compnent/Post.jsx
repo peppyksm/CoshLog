@@ -21,9 +21,24 @@ function Post({ ctg1, ctg2 }) {
                         <span style={{ marginLeft: "26%" }}>{post.ctg3}</span>
                         <span style={{ cursor: "pointer" }} onClick={() => {
 
-                            if(post.nickName == nickname || post.isPrivate == false){
+                            if (post.nickName == nickname || post.isPrivate == false) {
+                                const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+                                const newPosts = posts.map((item) => {
+                                    if (item.id == post.id) {
+                                        return {
+                                            ...item,
+                                            viewPoint: Number(item.viewPoint || 0) + 1,
+                                        };
+                                    }
+
+                                    return item;
+                                });
+
+                                localStorage.setItem("posts", JSON.stringify(newPosts));
+
                                 navigate(`/viewpost/${post.id}`);
-                            }else {
+                            } else {
                                 alert("비공개 글입니다.")
                             }
 
