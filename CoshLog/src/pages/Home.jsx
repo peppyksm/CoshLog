@@ -49,8 +49,8 @@ function Home() {
     return (
         <div className="homePage">
 
-            <h1 style={{ textAlign: "center", marginTop: "5%" }}>김명현 노트북 해킹완료 ㅋㅋ</h1>
-            <h1 style={{ textAlign: "center" }}>김승민한테 다털렸죠 앙 기모띠</h1>
+            <h1 style={{ textAlign: "center", marginTop: "5%" }}>시작이 반이다</h1>
+            <h1 style={{ textAlign: "center" }}>가만히 있으면 반이라도 간다</h1>
 
 
             <input type="radio" name="ctgSelect" id="fe" defaultChecked />

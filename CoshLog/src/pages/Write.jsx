@@ -15,7 +15,9 @@ function Write() {
     const [memo, setMemo] = useState("");
     const [isPrivate, setIsPrivate] = useState(false);
 
-    const nickName = JSON.parse(localStorage.getItem("nickka"));
+    const userData = JSON.parse(localStorage.getItem('user'));
+    const userIndex = JSON.parse(localStorage.getItem('index'));
+    const nickName = userData[userIndex].nickName;
 
     const handleCtgChange = (event) => {
         const value = event.target.value;
@@ -24,9 +26,9 @@ function Write() {
 
         if (value === "fe") {
             setCtg2("html");
-        } else if (value == "be"){
+        } else if (value == "be") {
             setCtg2("java");
-        } else{
+        } else {
             setCtg2("recruitment")
         }
     };
@@ -51,7 +53,8 @@ function Write() {
 
         posts.unshift(post);
         localStorage.setItem("posts", JSON.stringify(posts));
-
+        userData[userIndex].exp += 10; // 글쓰기 버튼 누르면 경험치 오름 님도 치셈 ㅇㅇ
+        localStorage.setItem('user', JSON.stringify(userData)); // 올라간 경험치 로컬스토리지에 저장하는거임 ㅇㅇ
         alert("게시 되었습니다 ( + 10Exp 획득! )");
 
         // navigate(`/forum/${writeCtg}/${ctg2}`);

@@ -23,12 +23,6 @@ function MyPage() {
         }
     });
 
-    useEffect(() => {
-        if (imageView !== undefined) {
-            localStorage.setItem('image', JSON.stringify(imageView));
-        }
-    }, [imageView]);
-
     const imageChange = (event) => {
         const profileImg = event.target.files[0];
 
@@ -48,6 +42,34 @@ function MyPage() {
         reader.readAsDataURL(profileImg);
     }
     const userLevel = userList[index].level;
+    const [badgeUse1, setBadgeUse1] = useState(() => {
+        if (userList[index].level >= 10) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    const [badgeUse2, setBadgeUse2] = useState(() => {
+        if (userList[index].level >= 30) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    const [badgeUse3, setBadgeUse3] = useState(() => {
+        if (userList[index].level >= 60) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    const [badgeUse4, setBadgeUse4] = useState(() => {
+        if (userList[index].level >= 100) {
+            return true;
+        } else {
+            return false;
+        }
+    });
     return (
         <div className='myPage_container'>
             <form className='myPage_form' onSubmit={(event) => {
@@ -89,10 +111,16 @@ function MyPage() {
                     <div className='myPage_badgeArea'>
                         <h3 className='myPage_text_main'>보유 뱃지</h3>
                         <div className='myPage_badgeImgArea'>
-                            <img className='myPage_img_badge' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeSfQ4x3I6CTEt5PzhNWeng4BUsrCg2OBE2OARMBcnvg&s=10' />
-                            <img className='myPage_img_badge' src='https://cdn-icons-png.flaticon.com/512/4209/4209019.png' />
-                            <img className='myPage_img_badge' src='https://img.icons8.com/color/1200/warranty.jpg' />
-                            <img className='myPage_img_badge' src='https://cdn-icons-png.flaticon.com/512/771/771273.png' />
+                            <img className={`myPage_img_badge${badgeUse1 ? ' myPage_badge_show' : ''}`} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeSfQ4x3I6CTEt5PzhNWeng4BUsrCg2OBE2OARMBcnvg&s=10' onClick={() => {
+                                alert('10레벨 달성 뱃지');
+                            }} />
+                            <img className={`myPage_img_badge${badgeUse2 ? ' myPage_badge_show' : ''}`} src='https://cdn-icons-png.flaticon.com/512/4209/4209019.png' onClick={() => {
+                                alert('30레벨 달성 뱃지');
+                            }} />
+                            <img className={`myPage_img_badge${badgeUse3 ? ' myPage_badge_show' : ''}`} src='https://img.icons8.com/color/1200/warranty.jpg' onClick={() => {
+                                alert('60레벨 달성 뱃지');
+                            }} />
+                            <img className={`myPage_img_badge${badgeUse4 ? ' myPage_badge_show' : ''}`} src='https://cdn-icons-png.flaticon.com/512/771/771273.png' />
                         </div>
                     </div>
                     <div className='myPage_line1'></div>
@@ -118,6 +146,7 @@ function MyPage() {
                                     userList[index].dailyQuest = qSum;
                                     localStorage.setItem('user', JSON.stringify(userList));
                                     alert('목표가 저장되었습니다.');
+                                    window.location.reload();
                                 }
                             }}>목표 저장</button>
                         </div>

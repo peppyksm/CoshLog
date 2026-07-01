@@ -16,7 +16,9 @@ function Register() {
             image: '',
             dailyQuest: 0,
             dailyQuestDo: 0,
-            level: 1
+            level: 1,
+            exp: 0,
+            needExp: 50
         }
         userDatas.push(userData);
         localStorage.setItem('user', JSON.stringify(userDatas));

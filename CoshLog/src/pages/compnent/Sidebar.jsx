@@ -16,6 +16,7 @@ function Sidebar() {
     const [nickName, setNickName] = useState('');
     const [level, setLevel] = useState(0);
     const [dailyQuest, setDailyQuest] = useState(0);
+    const [dailyQuestDo, setDailyQuestDo] = useState(0);
     useEffect(() => {
         const userList = JSON.parse(localStorage.getItem('user'));
         const index = JSON.parse(localStorage.getItem('index'));
@@ -35,6 +36,7 @@ function Sidebar() {
             }
             setLevel(userList[index].level);
             setDailyQuest(userList[index].dailyQuest);
+            setDailyQuestDo(userList[index].dailyQuestDo);
         }
         if (savedLogSt == 'true') {
             setLogSt('로그아웃');
@@ -72,7 +74,7 @@ function Sidebar() {
                         <div className="achievement"></div>
                     </div>
 
-                    <p id="targetText">오늘의 목표치 3/{dailyQuest}</p>
+                    <p id="targetText">오늘의 목표치 {dailyQuestDo}/{dailyQuest}</p>
                 </div>
 
                 <input id="searchAll" type="text" placeholder="Search all posts (input title)" onKeyDown={(e) => {

@@ -330,6 +330,14 @@ body {
 
     align-self: center;
 
+    cursor: pointer;
+
+    display: none;
+
+}
+
+.myPage_badge_show {
+    display: block;
 }
 
 #chnIMG {

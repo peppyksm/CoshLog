@@ -5,11 +5,19 @@
 }
 
 .ranking_container {
-    width: 100vw;
+    /* width: 100vw; */
+    width: auto;
     min-height: 100vh;
     height: auto;
 }
 
 .ranking_main {
-    margin: 5%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ranking_level,
+.ranking_badge {
+    width: auto;
 }

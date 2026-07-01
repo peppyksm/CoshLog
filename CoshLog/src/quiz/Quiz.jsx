@@ -29,7 +29,7 @@ function Quiz() {
                 </div>
                 <div className='quiz_hintBox'>
                     <h3 id='quiz_answer' onClick={() => {
-                        const inputAnswer = prompt();
+                        const inputAnswer = prompt('정답을 입력해주세요!');
                         if (inputAnswer == quiz[randomQuizIndex].answer) {
                             alert('정답입니다!');
                         } else if (inputAnswer != null && inputAnswer != quiz[randomQuizIndex].answer) {

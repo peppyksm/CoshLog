@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router'
+import { useEffect } from 'react';
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import './App.css'
@@ -27,6 +28,20 @@ import Search from './pages/Search';
 function App() {
   const location = useLocation();
 
+  // 이거 레벨링 시스템 시작부분임 ㅇㅇ
+  const userData = JSON.parse(localStorage.getItem('user'));
+  const userIndex = JSON.parse(localStorage.getItem('index'));
+  useEffect(() => {
+    if (userData) {
+      if (userData[userIndex].exp >= userData[userIndex].needExp) {
+        userData[userIndex].level += 1;
+        userData[userIndex].exp -= userData[userIndex].needExp;
+        userData[userIndex].needExp += 20;
+        localStorage.setItem('user', JSON.stringify(userData));
+      }
+    }
+  }, []) // 레벨링 시스템 끝부분임 ㅇㅇ
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -48,7 +63,7 @@ function App() {
           <Route path="/rank/level" element={<Page><Ranking /></Page>} />
           <Route path="/viewpost/:id" element={<Page><ViewPost /></Page>} />
           <Route path="/search" element={<Page><Search /></Page>} />
-          
+
         </Route>
 
         <Route path="/login" element={<Page><Login /></Page>} />
