@@ -19,6 +19,9 @@ function Sidebar() {
     const [dailyQuestDo, setDailyQuestDo] = useState(0);
     const [dailyQuestGage, setDailyQuestGage] = useState(0);
     const [gageBar, setGageBar] = useState('');
+
+
+
     useEffect(() => {
         const userList = JSON.parse(localStorage.getItem('user'));
         const index = JSON.parse(localStorage.getItem('index'));
@@ -70,7 +73,28 @@ function Sidebar() {
                     <h2>{logSt}</h2>
                 </div>
 
-                <div className="profileCard" onClick={() => { navigate("/mypage") }}>
+                {/* <div className="profileCard" onClick={() => {
+                    if (userList && index !== null && userList[index]) {
+                        navigate("/mypage");
+                    } else {
+                        alert('로그인이 필요한 페이지입니다.');
+                        navigate('/');
+                    }
+                } */}
+
+
+                <div className="profileCard" onClick={() => {
+                    const loginS = JSON.parse(localStorage.getItem("loginState"));
+                    if (loginS === 'true') {
+                        console.log(localStorage.getItem("loginState"));
+                        navigate("/mypage");
+                    }else{
+                        console.log(localStorage.getItem("loginState"));
+                        alert("로그인 후 접근하세요");
+                    }
+
+
+                }}>
                     <div className="userInfo">
                         <img src={imageView} id="photo" alt="profile" />
 
