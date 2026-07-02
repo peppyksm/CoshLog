@@ -1,4 +1,5 @@
-#all, #general,#info, #qna{
+#all, #general, #info, #qna,
+#teamAll, #teamGeneral, #teamInfo, #teamQna{
     display: none;
 }
 
@@ -7,6 +8,18 @@
     flex-direction: row;
     margin: 2%;
     align-items: center;
+}
+
+.selectBTN {
+    border: solid 2px black;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+}
+
+.selectBTN:hover{
+    cursor: pointer;
 }
 
 #all:checked~.postselectCont .allBtn{
@@ -29,14 +42,36 @@
     color: white;
 }
 
+#teamAll:checked~.postselectCont .teamAllBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamGeneral:checked~.postselectCont .teamGeneralBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamInfo:checked~.postselectCont .teamInfoBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamQna:checked~.postselectCont .teamQnaBtn{
+    background-color: black;
+    color: white;
+}
+
 .post{
-    width:53px;
+    min-width: 64px;
+    width: auto;
     border: solid 4px black;
     cursor: pointer;
     margin-left: auto;
     border-radius: 4px;
     background-color: black;
     color: white;
+    text-align: center;
 }
 
 .postItem {

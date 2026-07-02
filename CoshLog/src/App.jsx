@@ -26,6 +26,7 @@ import Search from './pages/Search';
 import CreateTeam from './pages/CreateTeam';
 import TeamRoom from './pages/TeamRoom';
 import TeamPostWrite from './pages/TeamWrite';
+import TeamViewPost from './pages/TeamViewPost';
 
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
       }
     }
   }) // 레벨링 시스템 끝부분임 ㅇㅇ
+
+  useEffect(()=>{
+    const userD
+  })
 
   return (
     <AnimatePresence mode="wait">
@@ -69,6 +74,7 @@ function App() {
           <Route path="/createteam" element={<Page><CreateTeam /></Page>} />
           <Route path="/team/:teamId" element={<TeamRoom />} />
           <Route path="/team/:teamId/write" element={<TeamPostWrite />} />
+          <Route path="/team/:teamId/post/:postId" element={<TeamViewPost />} />
 
         </Route>
 

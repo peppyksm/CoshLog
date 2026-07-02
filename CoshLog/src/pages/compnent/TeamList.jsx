@@ -15,7 +15,7 @@ function TeamList() {
                         }}>
                             <h1>{team.teamName}</h1><hr /><br />
                             <p>{team.teamExplain}</p>
-                            <p>{team.maxNum}</p>
+                            <p>최대 인원수 : {team.maxNum} 명</p>
                         </div>
                     );
                 })

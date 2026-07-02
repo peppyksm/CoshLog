@@ -1,5 +1,4 @@
 
-import ForumPostList from "./compnent/ForumPostList";
 import HeaderNav from "./compnent/HeaderNav";
 import "./TeamPrivate.css"
 import { useNavigate } from "react-router";
@@ -14,7 +13,6 @@ function TeamPrivate() {
                 <h1>팀 전용 작업실</h1>
             </div>
             {HeaderNav()}
-            {/* {ForumPostList()} */}
 
             <div className="teamHeader">
                 <h3>팀 목록</h3>

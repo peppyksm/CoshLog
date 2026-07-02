@@ -1,6 +1,7 @@
 import HeaderNav from "./compnent/HeaderNav";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import "./TeamPrivate.css";
 
 function CreateTeam() {
 
