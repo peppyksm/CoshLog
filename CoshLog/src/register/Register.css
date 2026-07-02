@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register_box {
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register_form {
+    background-color: black;
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.register_inputBox {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+.register_inputNameBox {
+    width: 20%;
+    height: auto;
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    color: white;
+    border-radius: 10px;
+    justify-items: end;
+    justify-content: space-evenly;
+    align-items: end;
+}
+
+.register_inputNameBox p {
+    margin-bottom: 20%;
+}
+
+.register_inputTextBox {
+    width: 80%;
+    height: auto;
+    background-color: black;
+    flex-direction: column;
+    padding-left: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.register_inputTextBox input {
+    width: 90%;
+    margin-bottom: 3%;
+    height: 50%;
+}
+
+.register_checkbox {
+    display: flex;
+    justify-content: center;
+}
+
+.register_checkbox1,
+.register_checkbox2 {
+    width: 40%;
+}
+
+.register_checkbox input {
+    accent-color: rgb(79, 129, 255);
+}
+
+.register_btn_complete {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#title {
+    color: white;
+    font-size: 25px;
+    justify-self: center;
+}
+
+#line {
+    border: solid 1px white;
+    width: 100%;
+}
+
+#checklist {
+    color: white;
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+#button {
+    width: 30%;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}

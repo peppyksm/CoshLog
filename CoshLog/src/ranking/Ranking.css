@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ranking_container {
+    /* width: 100vw; */
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+}
+
+.ranking_main {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+}
+
+.ranking_list {
+    width: auto;
+    border: 2px solid black;
+    padding: 1%;
+    border-radius: 5px;
+}

@@ -1,3 +1,28 @@
-.layout{
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.layout {
     display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 300px; 
+    height: 100vh;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.pageContent {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    min-width: 0;
 }

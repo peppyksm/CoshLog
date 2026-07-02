@@ -1,0 +1,91 @@
+.teamPage {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.teamHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2%;
+}
+
+.createTeamCont {
+    width: 50%;
+    height: 50%;
+    border: solid 1px gray;
+    margin: 2%;
+    padding: 3%;
+}
+
+#maxNum {
+    width: 12%;
+    text-align: center;
+}
+
+#teamSubmit {
+    font-size: 20px;
+    width: 20%;
+    margin-top: 10%;
+}
+
+#teamExplain {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    padding: 2%;
+}
+
+.teamBox {
+    padding: 2%;
+    width: 30%;
+    height: 30%;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+.teamBox:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: lightgray;
+}
+
+.teamListContainer {
+    padding: 3%;
+    width: 100%;
+    min-height: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.teamRoomInfo {
+    margin: 2% 3%;
+    padding: 1.5%;
+    border: solid 1px gray;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.teamRoomInfo span {
+    display: inline-block;
+    margin-top: 10px;
+    color: gray;
+}
+
+.emptyTeamRoom {
+    margin: 5% 3%;
+    text-align: center;
+}
+
+.emptyTeamRoom button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: solid 2px black;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

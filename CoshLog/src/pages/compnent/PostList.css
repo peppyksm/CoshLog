@@ -1,0 +1,91 @@
+#all, #general, #info, #qna,
+#teamAll, #teamGeneral, #teamInfo, #teamQna{
+    display: none;
+}
+
+.postselectCont{
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    align-items: center;
+}
+
+.selectBTN {
+    border: solid 2px black;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+}
+
+.selectBTN:hover{
+    cursor: pointer;
+}
+
+#all:checked~.postselectCont .allBtn{
+    background-color: black;
+    color: white;
+}
+
+#general:checked~.postselectCont .generalBtn{
+    background-color: black;
+    color: white;
+}
+
+#info:checked~.postselectCont .infoBtn{
+    background-color: black;
+    color: white;
+}
+
+#qna:checked~.postselectCont .qnaBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamAll:checked~.postselectCont .teamAllBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamGeneral:checked~.postselectCont .teamGeneralBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamInfo:checked~.postselectCont .teamInfoBtn{
+    background-color: black;
+    color: white;
+}
+
+#teamQna:checked~.postselectCont .teamQnaBtn{
+    background-color: black;
+    color: white;
+}
+
+.post{
+    min-width: 64px;
+    width: auto;
+    border: solid 4px black;
+    cursor: pointer;
+    margin-left: auto;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.postItem {
+    display: grid;
+    grid-template-columns: 10.3% 1fr 11.5% 15.5%;
+    align-items: center;
+    height: 25px;
+}
+
+.postItem span {
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.postHide{
+    display: none;
+}

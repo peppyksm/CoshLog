@@ -1,0 +1,46 @@
+#Writetitle {
+    width: 60%;
+    font-size: 17px;
+    margin-top: 1%;
+    color: black;
+    padding-left: 0.8%;
+}
+
+#writeCtg,
+#writeFe,
+#writeBe {
+    /* font-size: 17px; */
+}
+
+#writeFe,
+#writeBe {
+    margin-left: 0.5%;
+}
+
+#writeCode,
+#writeMemo {
+    width: 50%;
+    height: 65vh;
+    margin-top: 1%;
+    resize: none;
+    font-size: 14px;
+    padding: 1%;
+}
+
+#writeMemo2{
+    width: 100%;
+    height: 65vh;
+    margin-top: 1%;
+    resize: none;
+    font-size: 14px;
+    padding: 1%;
+}
+
+
+#submitBtn {
+    width: 60px;
+    font-size: 20px;
+    margin-top: 2%;
+    margin-left: 95%;
+    
+}
