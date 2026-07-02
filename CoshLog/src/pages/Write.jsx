@@ -49,15 +49,27 @@ function Write() {
             isPrivate: isPrivate,
             time: new Date().toISOString(),
             nickName: nickName,
-            viewPoint : 0,
-            likeCount : 0
+            viewPoint: 0,
+            likeCount: 0
         };
 
         posts.unshift(post);
         localStorage.setItem("posts", JSON.stringify(posts));
         userData[userIndex].exp += 10; // 글쓰기 버튼 누르면 경험치 오름 님도 치셈 ㅇㅇ
-        localStorage.setItem('user', JSON.stringify(userData)); // 올라간 경험치 로컬스토리지에 저장하는거임 ㅇㅇ
+        if (userData[userIndex].dailyQuestDo < userData[userIndex].dailyQuest) {
+            userData[userIndex].dailyQuestDo += 1;
+        }
+
+        if (userData[userIndex].dailyQuestDo == userData[userIndex].dailyQuest) {
+            userData[userIndex].exp += 50;
+        }
         alert("게시 되었습니다 ( + 10Exp 획득! )");
+
+        if (userData[userIndex].dailyQuestDo == userData[userIndex].dailyQuest) {
+            userData[userIndex].exp += 50;
+            alert("일일 목표 작성치 달성 ( 50Exp 추가 획득! )")
+        }
+        localStorage.setItem('user', JSON.stringify(userData)); // 올라간 경험치랑 일퀘 횟수 로컬스토리지에 저장하는거임 ㅇㅇ
 
         // navigate(`/forum/${writeCtg}/${ctg2}`);
         navigate(`/viewpost/${post.id}`);

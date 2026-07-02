@@ -17,6 +17,8 @@ function Sidebar() {
     const [level, setLevel] = useState(0);
     const [dailyQuest, setDailyQuest] = useState(0);
     const [dailyQuestDo, setDailyQuestDo] = useState(0);
+    const [dailyQuestGage, setDailyQuestGage] = useState(0);
+    const [gageBar, setGageBar] = useState('');
     useEffect(() => {
         const userList = JSON.parse(localStorage.getItem('user'));
         const index = JSON.parse(localStorage.getItem('index'));
@@ -44,6 +46,12 @@ function Sidebar() {
             setLogSt('로그인');
         }
     }, [])
+    useEffect(() => {
+        const userList = JSON.parse(localStorage.getItem('user'));
+        const index = JSON.parse(localStorage.getItem('index'));
+        const gageSum = Math.min((Number(userList[index].dailyQuestDo) / Number(userList[index].dailyQuest)) * 100, 100);
+        setGageBar(gageSum);
+    }, [gageBar, setGageBar]);
 
     return (
         <aside className="sidebar dark">
@@ -71,7 +79,7 @@ function Sidebar() {
                     </div>
 
                     <div className="target">
-                        <div className="achievement"></div>
+                        <div className="achievement" style={{ width: `${gageBar}%` }}></div>
                     </div>
 
                     <p id="targetText">오늘의 목표치 {dailyQuestDo}/{dailyQuest}</p>

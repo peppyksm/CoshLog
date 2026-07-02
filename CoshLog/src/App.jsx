@@ -43,7 +43,7 @@ function App() {
         localStorage.setItem('user', JSON.stringify(userData));
       }
     }
-  }, []) // 레벨링 시스템 끝부분임 ㅇㅇ
+  }) // 레벨링 시스템 끝부분임 ㅇㅇ
 
   return (
     <AnimatePresence mode="wait">

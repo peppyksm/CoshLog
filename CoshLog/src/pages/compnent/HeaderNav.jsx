@@ -37,7 +37,7 @@ function HeaderNav() {
                 </div>
                 <div className="navCtg navRank">랭킹
                     <div className="bgBlack navRankHo">
-                        <p onClick={() => { navigate("/rank/level") }}>- 레벨 랭킹</p>
+                        <p onClick={() => { navigate("/rank/level") }}>- 전체 랭킹</p>
                     </div>
                 </div>
             </div>

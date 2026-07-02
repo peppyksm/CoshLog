@@ -44,6 +44,8 @@ function MyPage() {
     const userLevel = userList[index].level;
     const [badgeUse1, setBadgeUse1] = useState(() => {
         if (userList[index].level >= 10) {
+            userList[index].badge += 1;
+            localStorage.setItem('user', JSON.stringify(userList));
             return true;
         } else {
             return false;
@@ -51,6 +53,8 @@ function MyPage() {
     });
     const [badgeUse2, setBadgeUse2] = useState(() => {
         if (userList[index].level >= 30) {
+            userList[index].badge += 1;
+            localStorage.setItem('user', JSON.stringify(userList));
             return true;
         } else {
             return false;
@@ -58,6 +62,8 @@ function MyPage() {
     });
     const [badgeUse3, setBadgeUse3] = useState(() => {
         if (userList[index].level >= 60) {
+            userList[index].badge += 1;
+            localStorage.setItem('user', JSON.stringify(userList));
             return true;
         } else {
             return false;
@@ -65,6 +71,8 @@ function MyPage() {
     });
     const [badgeUse4, setBadgeUse4] = useState(() => {
         if (userList[index].level >= 100) {
+            userList[index].badge += 1;
+            localStorage.setItem('user', JSON.stringify(userList));
             return true;
         } else {
             return false;
