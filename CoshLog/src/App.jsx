@@ -36,7 +36,7 @@ function App() {
   const userData = JSON.parse(localStorage.getItem('user'));
   const userIndex = JSON.parse(localStorage.getItem('index'));
   useEffect(() => {
-    if (userData) {
+    if (userData && userIndex !== null && userData[userIndex]) {
       if (userData[userIndex].exp >= userData[userIndex].needExp) {
         userData[userIndex].level += 1;
         userData[userIndex].exp -= userData[userIndex].needExp;
