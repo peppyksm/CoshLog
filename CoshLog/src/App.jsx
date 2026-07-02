@@ -46,10 +46,6 @@ function App() {
     }
   }) // 레벨링 시스템 끝부분임 ㅇㅇ
 
-  useEffect(()=>{
-    const userD
-  })
-
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>

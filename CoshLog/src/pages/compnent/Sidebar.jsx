@@ -49,8 +49,10 @@ function Sidebar() {
     useEffect(() => {
         const userList = JSON.parse(localStorage.getItem('user'));
         const index = JSON.parse(localStorage.getItem('index'));
-        const gageSum = Math.min((Number(userList[index].dailyQuestDo) / Number(userList[index].dailyQuest)) * 100, 100);
-        setGageBar(gageSum);
+        if (userList) {
+            const gageSum = Math.min((Number(userList[index].dailyQuestDo) / Number(userList[index].dailyQuest)) * 100, 100);
+            setGageBar(gageSum);
+        }
     }, [gageBar, setGageBar]);
 
     return (
