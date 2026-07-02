@@ -86,7 +86,7 @@ function Home() {
                 >
                     <SwiperSlide className="Box html">
                         <p>HTML</p>
-                        <CtgCard ctg1="fe" ctg2="html" />
+                        <CtgCard ctg1="fe" ctg2="html" /><hr /><hr /><hr />
                         <button className="quickMove" onClick={() => { navigate("/forum/fe/html") }} >바로가기</button>
                     </SwiperSlide>
 
