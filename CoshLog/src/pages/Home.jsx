@@ -7,7 +7,10 @@ import { EffectCoverflow } from "swiper/modules";
 import { useNavigate } from "react-router";
 import explainPhoto1 from "../image/home.png";
 import explainPhoto2 from "../image/forum.png";
-import explainPhoto3 from "../image/mypage.png";
+import explainPhoto3 from "../image/마이페이지.png";
+import explainPhoto4 from "../image/미니게임.png";
+import explainPhoto5 from "../image/레벨랭킹.png";
+import explainPhoto6 from "../image/팀전용.png";
 import { useEffect } from "react";
 import CtgCard from "./compnent/CtgCard";
 
@@ -50,7 +53,7 @@ function Home() {
         <div className="homePage">
 
             <h1 style={{ textAlign: "center", marginTop: "5%" }}>시작이 반이다</h1>
-            <h1 style={{ textAlign: "center" }}>가만히 있으면 반이라도 간다</h1>
+            {/* <h1 style={{ textAlign: "center" }}>가만히 있으면 반이라도 간다</h1> */}
 
 
             <input type="radio" name="ctgSelect" id="fe" defaultChecked />
@@ -192,11 +195,11 @@ function Home() {
                         <h1><span className="fontColor">게임</span>으로</h1>
                         <h1>나의 실력을 <span className="underLine">테스트</span> </h1>
                     </div>
-                    <img className="explainimg2" src={explainPhoto2} />
+                    <img className="explainimg2" src={explainPhoto4} />
                 </div>
 
                 <div className="explainRank scrollFade">
-                    <img className="explainimg1" src={explainPhoto3} />
+                    <img className="explainimg1" src={explainPhoto5} />
                     <div style={{ lineHeight: "40px", marginLeft: "5%" }}>
                         <h1><span className="fontColor">레벨랭킹</span>으로</h1>
                         <h1><span className="underLine">경쟁</span>해서 우위를 점해보세요</h1>
@@ -208,7 +211,7 @@ function Home() {
                         <h1>팀 구인/구직 페이지와</h1>
                         <h1>팀 간의 <span className="fontColor">Private</span>한 작업실까지</h1>
                     </div>
-                    <img className="explainimg2" src={explainPhoto2} />
+                    <img className="explainimg2" src={explainPhoto6} />
                 </div>
 
 
